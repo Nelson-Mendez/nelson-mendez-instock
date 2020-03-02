@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express(); 
 const cors = require('cors'); 
+const warehouseRoutes = require('./routes/warehouseRoutes');
 
 // CORS middleware
 app.use(function(req, res, next) {
@@ -9,9 +10,10 @@ app.use(function(req, res, next) {
     next();
   });
 
-
 // Express.json middleware
 app.use(express.json()); 
+
+app.use('/warehouse', warehouseRoutes); 
 
 app.listen(8080, () => {
     console.log('Server Started on http://localhost:8080');
