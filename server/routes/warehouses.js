@@ -4,39 +4,34 @@ const locations = require("../data/locations.json");
 
 router.post("/", (req, res) => {
   const data = req.body;
-  const name = data.name;
-  const id = data.id;
-  const street = data.street;
-  const location = data.location;
-  const contactName = data.contactName;
-  const position = data.position;
-  const phone = data.phone;
-  const email = data.email;
-  const categories = data.categories;
 
+  // populates address object
   const address =
   {
-    street: street,
-    location: location
+    street: data.street,
+    location: data.location
   }
 
+  // populates contact object
   const contact =
   {
-    contact: contactName,
-    position: position,
-    phone: phone,
-    email: email
+    contact: data.contactName,
+    position: data.position,
+    phone: data.phone,
+    email: data.email
   }
 
+  // new warehouse object, includes address and contact objects
   const uploadWarehouseObj =
   {
-    id: id,
-    name: name,
-    address: address,
-    contact: contact,
-    inventoryCategories: categories
+    id: data.id,
+    name: data.name,
+    address: data.address,
+    contact: data.contact,
+    inventoryCategories: data.categories
   }
 
+  // will send status and rejection if any fields are empty
   Object.values(uploadWarehouseObj).forEach(value => {
     if (!value) {
       return res.status(400).send("rejected: malformed data or data missing from a field")
