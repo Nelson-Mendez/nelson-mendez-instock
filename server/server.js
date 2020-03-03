@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express(); 
 const cors = require('cors'); 
-const inventoryRouter = require('./routes/inventory')
 var bodyParser = require('body-parser')
 const warehouseRoutes = require('./routes/warehouseRoutes');
 const inventoryRouter = require ('./routes/inventoryRoutes');
+const inventoryRoute = require('./routes/inventory')
 
 
 // CORS middleware
@@ -22,10 +22,10 @@ app.use(bodyParser.urlencoded({
 })); 
 
 // Routes Middleware 
-app.use(inventoryRouter)
 
 app.use('/warehouse', warehouseRoutes); 
 app.use('/inventory', inventoryRouter);
+app.use(inventoryRoute)
 
 app.listen(8080, () => {
     console.log('Server Started on http://localhost:8080');
