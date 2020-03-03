@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const locations = require("../data/locations.json");
 
+router.get("/", (req, res) => {
+  res.send(locations);
+});
+
 router.post("/", (req, res) => {
   const data = req.body;
 
