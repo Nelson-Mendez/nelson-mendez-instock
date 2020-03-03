@@ -4,6 +4,7 @@ const cors = require('cors');
 const inventoryRouter = require('./routes/inventory')
 var bodyParser = require('body-parser')
 const warehouseRoutes = require('./routes/warehouseRoutes');
+const inventoryRouter = require ('./routes/inventoryRoutes');
 
 
 // CORS middleware
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({
 app.use(inventoryRouter)
 
 app.use('/warehouse', warehouseRoutes); 
+app.use('/inventory', inventoryRouter);
 
 app.listen(8080, () => {
     console.log('Server Started on http://localhost:8080');
