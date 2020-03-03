@@ -50,7 +50,7 @@ router.post("/", (req, res) => {
     }
   })
 
-  locations.unshift(uploadWarehouseObj);
+  locations.push(uploadWarehouseObj);
   res.send(locations);
 })
 
