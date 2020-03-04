@@ -1,32 +1,36 @@
 import React from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
-import SearchBar from '../../components/SearchBar/SearchBar';
-import SingleProduct from '../../components/SingleProduct/SingleProduct';
-import ModalButton from '../../components/ModalButton/ModalButton';
+// import SearchBar from '../../components/SearchBar/SearchBar';
+// import ModalButton from '../../components/ModalButton/ModalButton';
+import './allinventory.scss';
+import ProductList from '../../components/ProductList/ProductList.js';
+
 
 
 export default class AllInventory extends React.Component {
 
     state = {
-        inventoryList: [],
+        inventoryList:  [],
         loadedInventory: false,
         modalClicked: false
     }
 
     componentDidMount () {
+
         axios
         .get('http://localhost:8080/inventory')
         .then(response => {
-            console.log(response.data);
             this.setState ({
                 inventoryList: response.data,
-                loadedInventory: true,
+                loadedInventory: true
             })
         })
+        
     }
 
     render () {
+
+        console.log(this.state.loadedInventory)
 
         if (this.state.loadedInventory) {
             return (
@@ -38,13 +42,7 @@ export default class AllInventory extends React.Component {
 
                     {/* <TableHeader /> */}
     
-                    {this.state.inventoryList.map(item => {
-                        return (
-                            <Link key={item.id} to={`/${item.id}`}>
-                                <SingleProduct content={item} />
-                            </Link>
-                        )
-                    })}
+                    <ProductList content={this.state.inventoryList} />
 
                     {/* <ModalButton /> */}
                     
