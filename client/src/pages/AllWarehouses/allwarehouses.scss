@@ -5,20 +5,32 @@
 .warehouses {
   margin: 0 $spacing-sm;
   margin-top: $spacing-top;
+  @include tablet {
+    margin: 0 $spacing-med;
+    margin-top: $dt-spacing-lg;
+  }
   &__link {
     @include link-reset;
   }
-  &__title{
+  &__title-wrap {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__title {
     @include mb-text-1;
     margin-bottom: $spacing-sm;
     @include tablet {
       @include text-1;
+      margin-bottom: $spacing-med;
     }
   }
-  &__subheading{
+  &__subheading {
     display:none;
   }
   &__item {
+    position: relative;
     border-bottom: 1px solid $light-grey;
   }
 }

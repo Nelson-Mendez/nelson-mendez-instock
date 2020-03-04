@@ -5,14 +5,26 @@
 .warehouseItem {
   &__block {
     margin-bottom: $spacing-sm;
+    @include tablet {
+      width: 33%;
+    }
   }
   &__block--first {
     display: flex;
     justify-content: space-between;
     padding-top: $spacing-med;
+    @include tablet {
+      margin-bottom: $spacing-top;
+    }
   }
   &__block--last {
     margin-bottom: $spacing-med;
+  }
+  &__bottom-blocks {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__heading {
     @include text-4;
@@ -26,7 +38,11 @@
     font-style: italic;
   }
   &__icon {
-    align-self: flex-start;
-    margin-top: 5px;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    @include tablet {
+      top: 35px;
+    }
   }
 }

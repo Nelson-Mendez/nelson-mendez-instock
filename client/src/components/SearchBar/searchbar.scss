@@ -13,6 +13,7 @@
   background: $off-white;
   @include tablet {
     max-width: 252px;
+    margin-bottom: 0;
     }
   @include desktop {
     max-width: 243px;
