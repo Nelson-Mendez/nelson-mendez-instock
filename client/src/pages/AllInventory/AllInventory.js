@@ -8,9 +8,9 @@ import ModalButton from '../../components/ModalButton/ModalButton';
 export default class AllInventory extends React.Component {
 
     state = {
-        modalClicked: false,
         inventoryList: [],
-        loadedInventory: false
+        loadedInventory: false,
+        modalClicked: false
     }
 
     componentDidMount () {
