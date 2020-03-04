@@ -1,0 +1,7 @@
+@import "../../PartialStyles/mixins";
+@import "../../PartialStyles/fonts";
+@import "../../PartialStyles/variables";
+
+.link {
+    @include link-reset;
+}
