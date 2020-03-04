@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import "./allwarehouses.scss";
-import OneWarehouse from "../OneWarehouse/OneWarehouse";
+import SingleWarehouse from "../../components/SingleWarehouse/SingleWarehouse";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
 const URL = "http://localhost:8080/"
@@ -53,7 +53,7 @@ class AllWarehouses extends React.Component {
               return (
                 <div className="warehouses__item" key={obj.id}>
                   <Link className="warehouses__link" key={obj.id} to={`/warehouses/${obj.id}`}>
-                    <OneWarehouse
+                    <SingleWarehouse
                       id={obj.id}
                       name={obj.name}
                       address={obj.address}

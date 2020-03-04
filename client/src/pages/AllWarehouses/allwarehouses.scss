@@ -11,6 +11,9 @@
   &__title{
     @include mb-text-1;
     margin-bottom: $spacing-sm;
+    @include tablet {
+      @include text-1;
+    }
   }
   &__subheading{
     display:none;
