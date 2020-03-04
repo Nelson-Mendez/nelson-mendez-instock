@@ -17,14 +17,14 @@
 @mixin link-reset {
   list-style-type: none;
   text-decoration: none;
-  color: white;
+  color: #000;
 }
 
 // mobile font
 @mixin mb-text-1 {
   font-family: "AvenirNextBold";
   font-size: $mb-h1;
-  line-height: $mb-lh-h1;
+  line-height: $lh-h4;
 }
 
 @mixin mb-text-2 {

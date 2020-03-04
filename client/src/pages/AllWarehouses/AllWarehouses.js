@@ -52,7 +52,7 @@ class AllWarehouses extends React.Component {
             {this.state.warehouseList.map(obj => {
               return (
                 <div className="warehouses__item" key={obj.id}>
-                  <Link to={`/warehouses/${obj.id}`}>
+                  <Link className="warehouses__link" key={obj.id} to={`/warehouses/${obj.id}`}>
                     <OneWarehouse
                       id={obj.id}
                       name={obj.name}

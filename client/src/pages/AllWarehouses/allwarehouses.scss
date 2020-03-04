@@ -2,3 +2,17 @@
 @import "../../PartialStyles/mixins";
 @import "../../PartialStyles/variables";
 
+.warehouses {
+  margin: 0 $spacing-sm;
+  margin-top: $spacing-top;
+  &__link {
+    @include link-reset;
+  }
+  &__title{
+    @include mb-text-1;
+    margin-bottom: $spacing-sm;
+  }
+  &__subheading{
+    display:none;
+  }
+}
