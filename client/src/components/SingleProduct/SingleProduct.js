@@ -4,8 +4,8 @@ import './singleproduct.scss'
 
 export default function SingleProduct (props) {
     
-    const status = "";
-    (props.content.status === true ? status = "In Stock" : status = "Out of Stock");
+    // const status = "";
+    // (props.content.status === true ? status = "In Stock" : status = "Out of Stock");
 
     return (
         <div className="item">
@@ -25,9 +25,9 @@ export default function SingleProduct (props) {
             <p className="item__detail">{props.content.quantity}</p>
 
             <p className="item__heading">STATUS</p>
-            <p className="item__detail">{status}</p>
+            {/* <p className="item__detail">{status}</p> */}
 
-            <Kebab />
+            {/* <Kebab /> */}
 
         </div>
     )

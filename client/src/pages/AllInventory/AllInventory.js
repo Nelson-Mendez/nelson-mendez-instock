@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import {Link} from 'react-router-dom';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import SingleProduct from '../../components/SingleProduct/SingleProduct';
@@ -17,9 +18,10 @@ export default class AllInventory extends React.Component {
         axios
         .get('http://localhost:8080/inventory')
         .then(response => {
+            console.log(response.data);
             this.setState ({
                 inventoryList: response.data,
-                loadedInventory: true
+                loadedInventory: true,
             })
         })
     }
@@ -32,11 +34,11 @@ export default class AllInventory extends React.Component {
 
                     <h1 className="inventory__title">Inventory</h1>
 
-                    <SearchBar />
+                    {/* <SearchBar /> */}
 
-                    <TableHeader />
+                    {/* <TableHeader /> */}
     
-                    {this.state.inventoryList.forEach(item => {
+                    {this.state.inventoryList.map(item => {
                         return (
                             <Link key={item.id} to={`/${item.id}`}>
                                 <SingleProduct content={item} />
@@ -44,11 +46,12 @@ export default class AllInventory extends React.Component {
                         )
                     })}
 
-                    <ModalButton />
+                    {/* <ModalButton /> */}
                     
                 </main>
             )
         }
+        else {return "loading"}
     }
 }
 
