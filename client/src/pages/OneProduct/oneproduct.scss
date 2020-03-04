@@ -1,5 +1,6 @@
 @import '../../PartialStyles/fonts';
 @import '../../PartialStyles/variables';
+@import '../../PartialStyles/mixins';
 
 .OneProduct {
     font-family: "AvenirNextRegular";
@@ -42,6 +43,8 @@
 
     &__section-container {
         margin-top: 3rem;
+
+        
     }
 
     &__title {
@@ -68,4 +71,76 @@
         border-radius: 0.4rem;
     }
 
+}
+
+@include tablet {
+    .OneProduct {
+        &__container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__sections-container {
+        
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        &__section-container {
+            margin-right: auto;
+            width: 20rem;
+
+            &--description {
+                width: 100%
+            }
+
+            &--category {
+                width: 100%;
+                border-bottom: 0.15rem solid $light-grey;
+                padding-bottom: 3rem;
+            }
+        }
+
+        &__edit-btn {
+            width: 25rem;
+            margin-left: auto;
+        }
+
+        &__header-container {
+            display: flex;
+            align-items: center;
+        }
+
+        &__stock-btn {
+            margin-left: 4rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@include desktop {
+    .OneProduct {
+
+        &__information-container {
+            width: 100%;
+        }
+
+        &__all-sections-container {
+            display: flex;
+            border-bottom: 0.15rem solid $light-grey;
+        }
+
+        &__section-container {
+
+            &--category {
+                border: none;
+            }
+        }
+
+        &__header-container {
+            border-bottom: 0.15rem solid $light-grey;
+            padding-bottom: 5rem;
+        }
+    }
 }
