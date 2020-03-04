@@ -1,0 +1,105 @@
+// @import '_mixins.scss';
+
+.item {
+    padding: 2rem 1rem 0;
+    // font-family: AvenirBold;
+
+    // @include tablet {
+    //     padding: 3rem 1.5rem;
+    // }
+
+    // @include desktop {
+    //     padding: 3rem 11.25rem 2.5rem;
+    //     display: flex;
+    //     flex-direction: row;
+    //     justify-content: space-between;
+    // }
+
+
+    // &__title {
+    //     font-size: 24px;
+    //     // font-family: AvenirBold;
+    //     color: black;
+    //     margin-bottom: 2.5rem;
+
+    //     @include desktop {
+    //         margin-right: 10rem;
+    //     }
+    // }
+
+    // &__list {
+    //     @include desktop {
+    //         width: 50.25rem;
+    //     }
+    // }
+
+    // &__listheader{
+    //     display:none;
+    //     font-size: 13px;
+
+    //     @include tablet {            
+    //         display:flex;
+    //     }
+
+    //     @include desktop {
+    //         margin-bottom: 0.5rem;
+    //     }
+    // }
+
+    // &__header {
+    //     @include tablet {
+    //         font-size: 14px;
+    //         // font-family: AvenirDemi;
+    //         width:26%;
+    //     }
+
+    //     @include desktop {
+    //         width:25%;
+    //     }
+    // }
+    
+
+    // &__card {
+    //     border-bottom: 1px solid #A1A1A1;
+    //     margin-bottom: 2rem;
+
+    //     @include tablet {
+    //         display:flex;
+    //         flex-direction: row;
+    //         justify-content: space-between;
+    //     }
+    // }
+
+    &__detail {
+        font-size: 13px;
+        padding: 1rem 0 1.5rem;
+
+        // @include tablet {
+        //     font-size: 14px;
+        //     padding: 0;
+        // }
+
+        &--bold {
+            // font-family: AvenirDemi;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+
+    // &__section {
+    //     @include tablet {
+    //         width:25%;
+    //         align-self: center;
+    //     }
+
+    // }
+
+    &__heading {
+        color: #A1A1A1;
+        // font-family: AvenirDemi;
+    
+        // @include tablet {
+        //     display:none;
+        // }        
+    }
+}
