@@ -34,10 +34,16 @@ class AllWarehouses extends React.Component {
   render() {
     return (
       <>
-        <div className="warehouses__list">
+        <div className="warehouses">
           <div className="warehouses__title-wrap">
             <h1 className="warehouses__title">Locations</h1>
             <p>SEARCH BAR SHOULD GO HERE</p>
+          </div>
+          <div className="warehouses__subheading-wrap">
+            <h3 className="warehouses__subheading">WAREHOUSE</h3>
+            <h3 className="warehouses__subheading">CONTACT</h3>
+            <h3 className="warehouses__subheading">CONTACT INFORMATION</h3>
+            <h3 className="warehouses__subheading">CATEGORIES</h3>
           </div>
           {this.state.warehouseList.map(obj => {
             return (
