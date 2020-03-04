@@ -1,0 +1,14 @@
+.addButton {
+    background-color:#004992;
+    background-image: url(../../assets/Icons/SVG/Icon-add.svg);
+	border-radius:50%;
+	display:inline-block;
+	cursor:pointer;
+    padding:60px 60px;
+	text-decoration:none;
+}
+
+.addButton:active {
+	position:relative;
+	top:1px;
+}
