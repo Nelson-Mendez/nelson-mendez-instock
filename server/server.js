@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({
 
 // Routes Middleware 
 
-app.use('/warehouse', warehouseRouter);
+app.use('/warehouses', warehouseRouter);
 app.use('/inventory', inventoryRouter);
 
 
