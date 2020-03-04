@@ -20,7 +20,7 @@ export default function Nav() {
                         </Link>
                     </li>
                     <li class="Header__nav-list-item Header__nav-list--links">
-                        <Link to="/locations" class="Header__nav-link Header__nav-link--location">
+                        <Link to="/warehouses" class="Header__nav-link Header__nav-link--location">
                             Locations
                         </Link>
                     </li>
