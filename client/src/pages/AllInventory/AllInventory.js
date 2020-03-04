@@ -18,7 +18,7 @@ export default class AllInventory extends React.Component {
         axios
         .get('http://localhost:8080/inventory')
         .then(response => {
-            console.log(response.data);
+            
             this.setState ({
                 inventoryList: response.data,
                 loadedInventory: true,
@@ -40,7 +40,7 @@ export default class AllInventory extends React.Component {
     
                     {this.state.inventoryList.map(item => {
                         return (
-                            <Link key={item.id} to={`/${item.id}`}>
+                            <Link key={item.id} to={`inventory/${item.id}`}>
                                 <SingleProduct content={item} />
                             </Link>
                         )
