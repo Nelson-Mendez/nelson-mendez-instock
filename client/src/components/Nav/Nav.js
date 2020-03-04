@@ -18,7 +18,7 @@ export default function Nav() {
                         </a>
                     </li>
                     <li class="Header__nav-list-item Header__nav-list--links">
-                        <a href="./shows.html" class="Header__nav-link">
+                        <a href="./shows.html" class="Header__nav-link Header__nav-link--location">
                             Locations
                         </a>
                     </li>

@@ -1,7 +1,11 @@
+@import '../../PartialStyles/mixins';
+@import '../../PartialStyles/variables';
+@import '../../PartialStyles/fonts';
+
 .Header {
     height: 15vh;
-    background-color: rgb(49, 49, 49);
-    font-family: "Lato";
+    background-color: $black;
+    font-family: "AvenirNextRegular";
 
     &__nav-list {
         display: flex;
@@ -10,7 +14,7 @@
         height: 100%;
     }
 
-    &__links-container{
+    &__links-container {
         width: 100%;
         display: flex;
         align-items: center;
@@ -18,13 +22,12 @@
     }
 
     &__nav-list-item {
-        list-style: none;
-        
-        font-size: 1.75rem;
+        list-style: none;   
+        font-size: 2rem;
         height: 100%;
         display: flex;
         align-items: center;
-        width: 50%
+        width: 50%;
     }
 
     &__logo {
@@ -32,22 +35,83 @@
     }
 
     &__nav-link{
-        color: white;
+        color: $off-white;
         text-decoration: none;
         position: relative;
         margin: 0 auto;
         width: 100%;
-        padding-bottom: 0.5rem;
+        padding-bottom: 1rem;
 
         &--active {
             border-bottom: 0.5rem solid white;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            color: white;
-            justify-content: center;
         }
 
     }
 
+}
+
+@include tablet {
+    .Header {
+        
+        &__nav-list {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        &__nav-list-item {
+
+            margin-right: 1rem;
+
+            &--logo {
+                display: flex;
+                justify-content: flex-start;
+                width: 35%
+            }
+        }
+
+        &__links-container {
+            width: 30%;
+            justify-content: flex-start;
+        }
+
+        &__nav-link {
+            height: 15vh;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+ 
+        }
+    }
+}
+
+@include desktop {
+    .Header {
+
+        height: 15vh;
+
+        &__nav-list {
+            width: 90%;
+            margin: 0 auto
+        }
+
+        &__links-container {
+            width: 30%;
+            margin-left: -8.5rem;
+            height: 100%;
+        }
+
+        &__logo {
+            width: 17.5rem;
+        }
+
+        &__nav-link {
+            font-size: 2rem;
+
+            &--active {
+             
+                margin-right: 2rem;
+            }
+        }
+    }
 }
