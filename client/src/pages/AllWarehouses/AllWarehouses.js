@@ -72,3 +72,4 @@ class AllWarehouses extends React.Component {
 }
 
 export default AllWarehouses;
+
