@@ -26,8 +26,19 @@
       margin-bottom: $spacing-med;
     }
   }
+  &__subheading-wrap {
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
   &__subheading {
-    display:none;
+    display: none;
+    @include desktop {
+      display: unset;
+      @include label-text;
+      width: 33%;
+    }
   }
   &__item {
     position: relative;
