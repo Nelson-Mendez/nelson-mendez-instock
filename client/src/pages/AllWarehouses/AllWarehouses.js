@@ -45,6 +45,10 @@ class AllWarehouses extends React.Component {
     this.getWarehouseList();
   }
 
+  componentShouldUpdate() {
+    this.getWarehouseList();
+  }
+
   render() {
     return (
       <>
@@ -79,7 +83,7 @@ class AllWarehouses extends React.Component {
           <button onClick={this.openModal}>
             PLUS SIGN GOES HERE
           </button>
-          <AddWarehouseModal isOpen={this.state.modalIsOpen} contentLabel="onRequestClose" onRequestClose={this.closeModal} closeModal={this.closeModal} portalClassName="AddWarehouseModal" />
+          <AddWarehouseModal isOpen={this.state.modalIsOpen} contentLabel="onRequestClose" onRequestClose={this.closeModal} closeModal={this.closeModal} portalClassName="AddWarehouseModal" getWarehouseList={this.getWarehouseList} />
         </div>
       </>
     )
