@@ -24,7 +24,7 @@
 @mixin mb-text-1 {
   font-family: "AvenirNextBold";
   font-size: $mb-h1;
-  line-height: $mb-lh-h1;
+  line-height: $lh-h4;
 }
 
 @mixin mb-text-2 {
@@ -100,7 +100,7 @@
 }
 
 @mixin label-text {
-  font-size: $h7;
+  font-size: $h6;
   line-height: $lh-h6;
   color: $grey;
 }
