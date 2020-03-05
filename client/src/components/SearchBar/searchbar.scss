@@ -16,7 +16,8 @@
     margin-bottom: 0;
     }
   @include desktop {
-    max-width: 243px;
+    min-width: 275px;
+    margin-right: 18px;
   }
   &__icon {
     margin-left: $spacing-sm;

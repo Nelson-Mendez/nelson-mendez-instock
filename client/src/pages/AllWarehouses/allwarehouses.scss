@@ -9,6 +9,11 @@
     margin: 0 $spacing-med;
     margin-top: $dt-spacing-lg;
   }
+  @include desktop {
+    margin: 0 60px;
+    margin-top: $dt-spacing-lg;
+    margin-bottom: 80px;
+  }
   &__link {
     @include link-reset;
   }
@@ -29,7 +34,8 @@
   &__subheading-wrap {
     @include desktop {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
+      width: 1152px;
     }
   }
   &__subheading {
@@ -37,11 +43,24 @@
     @include desktop {
       display: unset;
       @include label-text;
-      width: 33%;
+      width: 245px;
+    }
+    &:first-of-type{
+      @include desktop {
+        width: 300px;
+      }
     }
   }
   &__item {
     position: relative;
     border-bottom: 1px solid $light-grey;
+    @include desktop {
+      margin-top: $spacing-med;
+    }
+    &:first-of-type {
+      @include desktop {
+      margin-top: $spacing-top;
+      }
+    }
   }
 }

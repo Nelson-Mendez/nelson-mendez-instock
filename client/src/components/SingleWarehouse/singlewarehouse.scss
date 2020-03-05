@@ -3,10 +3,22 @@
 @import "../../PartialStyles/variables";
 
 .warehouseItem {
+  &__all-blocks {
+    @include desktop {
+      display: flex;
+    }
+  }
   &__block {
     margin-bottom: $spacing-sm;
     @include tablet {
       width: 33%;
+    }
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 245px;
+      margin-bottom: $spacing-med;
     }
   }
   &__block--first {
@@ -16,20 +28,38 @@
     @include tablet {
       margin-bottom: $spacing-top;
     }
+    @include desktop {
+      padding-top: 0;
+      margin-bottom: $spacing-med;
+      width: 290px;
+    }
   }
   &__block--last {
     margin-bottom: $spacing-med;
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
   }
   &__bottom-blocks {
     @include tablet {
       display: flex;
       justify-content: space-between;
     }
+    @include desktop {
+      width: 75%;
+      justify-content: flex-start;
+      margin-left: 20px;
+    }
   }
   &__heading {
     @include text-4;
     font-family: "AvenirNextDemiBold";
     margin-bottom: $spacing-xs;
+    @include desktop {
+      margin-bottom: 0;
+    }
   }
   &__info {
     @include text-5;
@@ -43,6 +73,9 @@
     right: 20px;
     @include tablet {
       top: 35px;
+    }
+    @include desktop {
+      top: 10px;
     }
   }
 }
