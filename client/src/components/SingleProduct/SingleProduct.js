@@ -2,7 +2,11 @@ import React from 'react'
 import './singleproduct.scss';
 import deleteBtn from '../../assets/Icons/SVG/Icon-kebab-default.svg';
 
-export default function SingleProduct() {
+export default function SingleProduct(props) {
+
+        let status = "";
+    (props.content.isInstock === true ? status = "In Stock" : status = "Out of Stock");
+
     return (
         <div className="SingleProduct">
             <div className="SingleProduct__container">
@@ -10,11 +14,11 @@ export default function SingleProduct() {
                     <h3 className="SingleProduct__title">
                         item
                     </h3>
-                    <h1 className="SingleProduct__information SingleProduct__information--name">
-                        Product Name Here
-                    </h1>
+                    <p className="SingleProduct__information SingleProduct__information--name">
+                        {props.content.name}
+                    </p>
                     <p className="SingleProduct__information SingleProduct__information--description">
-                        Here is a very brief description of the product in the inventory…
+                    {props.content.description}
                     </p>
                 </div>
 
@@ -23,7 +27,7 @@ export default function SingleProduct() {
                         Last Ordered
                     </h3>
                     <p className="SingleProduct__information">
-                        05/24/2018
+                    {props.content.lastOrdered}
                     </p>
                 </div>
 
@@ -32,7 +36,7 @@ export default function SingleProduct() {
                         Locations
                     </h3>
                     <p className="SingleProduct__information">
-                        Toronto, CAN
+                    {props.content.city}, {props.content.country}
                     </p>
                 </div>
 
@@ -41,7 +45,7 @@ export default function SingleProduct() {
                         QUANTITY
                     </h3>
                     <p className="SingleProduct__information">
-                        12,000
+                    {props.content.quantity}
                     </p>
                 </div>
 
@@ -50,7 +54,7 @@ export default function SingleProduct() {
                         STATUS
                     </h3>
                     <p className="SingleProduct__information">
-                        In Stock
+                    {status}
                     </p>
                 </div>
 
