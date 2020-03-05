@@ -20,6 +20,7 @@ export default class AllInventory extends React.Component {
         axios
         .get('http://localhost:8080/inventory')
         .then(response => {
+            
             this.setState ({
                 inventoryList: response.data,
                 loadedInventory: true
