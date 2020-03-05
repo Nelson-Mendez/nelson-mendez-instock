@@ -1,24 +1,46 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 import './singleproduct.scss';
-import deleteBtn from '../../assets/Icons/SVG/Icon-kebab-default.svg';
+import RemoveItem from '../RemoveItem/RemoveItem'; 
 
-export default function SingleProduct(props) {
+export default class SingleProduct extends React.Component {
+    constructor(props) {
+        super(props)
 
-        let status = "";
-    (props.content.isInstock === true ? status = "In Stock" : status = "Out of Stock");
+        this.state={
+          showMenu: false, 
+        }
+        // this.handleShowMenu = this.handleShowMenu.bind(this);
+    }
+    handleShowMenu (event){
+        console.log("CHECK",this.state);
+        event.preventDefault(); 
+        // event.stopPropagation();
+        if(this.state.showMenu === true) {
+            this.setState({ showMenu: false });
+        }
+        else if(this.state.showMenu === false) {
+            this.setState({ showMenu: true });
+        }
+    }    
+    
 
+    render(){
+    let status = "";
+    (this.props.content.isInstock === true ? status = "In Stock" : status = "Out of Stock");
     return (
         <div className="SingleProduct">
             <div className="SingleProduct__container">
+            {/* <Link className="link" key={this.props.content.id} to={`/inventory/${this.props.content.id}`}> */}
                 <div className="SingleProduct__section-container SingleProduct__section-container--product">
                     <h3 className="SingleProduct__title">
                         item
                     </h3>
                     <p className="SingleProduct__information SingleProduct__information--name">
-                        {props.content.name}
+                        {this.props.content.name}
                     </p>
                     <p className="SingleProduct__information SingleProduct__information--description">
-                    {props.content.description}
+                    {this.props.content.description}
                     </p>
                 </div>
 
@@ -27,7 +49,7 @@ export default function SingleProduct(props) {
                         Last Ordered
                     </h3>
                     <p className="SingleProduct__information">
-                    {props.content.lastOrdered}
+                    {this.props.content.lastOrdered}
                     </p>
                 </div>
 
@@ -36,7 +58,7 @@ export default function SingleProduct(props) {
                         Locations
                     </h3>
                     <p className="SingleProduct__information">
-                    {props.content.city}, {props.content.country}
+                    {this.props.content.city}, {this.props.content.country}
                     </p>
                 </div>
 
@@ -45,7 +67,7 @@ export default function SingleProduct(props) {
                         QUANTITY
                     </h3>
                     <p className="SingleProduct__information">
-                    {props.content.quantity}
+                    {this.props.content.quantity}
                     </p>
                 </div>
 
@@ -57,16 +79,15 @@ export default function SingleProduct(props) {
                     {status}
                     </p>
                 </div>
-
+                {/* </Link> */}
                 <div className="SingleProduct__section-container SingleProduct__section-container--button">
-                    <button className="SingleProduct__delete-btn">
-                        <img src={deleteBtn} alt="" className="SingleProduct__kebab"/>
-                    </button>
+                    <RemoveItem handleShowMenu={this.handleShowMenu.bind(this)} showMenu={this.state.showMenu}/>
                 </div>
 
             </div>
         </div>
     )
+    }
 }
 
 /*
