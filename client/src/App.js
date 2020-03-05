@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Nav from './components/Nav/Nav';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import AllWarehouses from './pages/AllWarehouses/AllWarehouses';

@@ -4,23 +4,26 @@
 
 .search {
   display: flex;
-  @include mb-text-4;
-  width: 90vw;
+  @include mb-text-2;
+  margin-bottom: $spacing-sm;
+  width: 250px;
   height: 50px;
   border-radius: 5px;
   border: 1px solid $light-grey;
   background: $off-white;
   @include tablet {
     max-width: 252px;
+    margin-bottom: 0;
     }
   @include desktop {
-    max-width: 243px;
+    min-width: 275px;
+    margin-right: 18px;
   }
   &__icon {
     margin-left: $spacing-sm;
   }
   &__input {
-    @include mb-text-5;
+    @include mb-text-2;
     width: inherit;
     height: inherit;
     padding-top: 2px;
