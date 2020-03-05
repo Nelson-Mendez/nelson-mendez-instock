@@ -48,7 +48,7 @@ export default class AllInventory extends React.Component {
                     <main className="inventory">
                         
                         <h1 className="inventory__title">Inventory</h1>
-                        Hi
+                        
                         {/* <SearchBar /> */}
 
                         {/* <TableHeader /> */}
