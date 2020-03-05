@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Modal from 'react-modal';
+
+import AddWarehouseModal from '../../components/AddWarehouseModal/AddWarehouseModal'
 
 import "./allwarehouses.scss";
 import SingleWarehouse from "../../components/SingleWarehouse/SingleWarehouse";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
-Modal.setAppElement('#root');
 const URL = "http://localhost:8080/"
 
 class AllWarehouses extends React.Component {
@@ -22,10 +22,6 @@ class AllWarehouses extends React.Component {
   openModal = () => {
     this.setState({ modalIsOpen: true })
   }
-
-  // afterOpenModal = () => {
-
-  // }
 
   closeModal = () => {
     this.setState({ modalIsOpen: false })
@@ -83,10 +79,7 @@ class AllWarehouses extends React.Component {
           <button onClick={this.openModal}>
             PLUS SIGN GOES HERE
           </button>
-          <Modal isOpen={this.state.modalIsOpen} contentLabel="onRequestClose" onRequestClose={this.closeModal}>
-            <p>MODAAAAAAAAL BB</p>
-            <button onClick={this.closeModal}>Cancel</button>
-          </Modal>
+          <AddWarehouseModal isOpen={this.state.modalIsOpen} contentLabel="onRequestClose" onRequestClose={this.closeModal} closeModal={this.closeModal} portalClassName="AddWarehouseModal"/>
         </div>
       </>
     )
