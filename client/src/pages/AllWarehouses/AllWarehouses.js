@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
 import "./allwarehouses.scss";
 import SingleWarehouse from "../../components/SingleWarehouse/SingleWarehouse";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -37,6 +36,7 @@ class AllWarehouses extends React.Component {
   render() {
     return (
       <>
+        
         <div className="warehouses">
           <div className="warehouses__title-wrap">
             <h1 className="warehouses__title">Locations</h1>
