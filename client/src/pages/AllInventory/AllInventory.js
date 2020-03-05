@@ -7,6 +7,7 @@ import ProductList from '../../components/ProductList/ProductList.js';
 
 
 
+
 export default class AllInventory extends React.Component {
 
     state = {
@@ -29,25 +30,38 @@ export default class AllInventory extends React.Component {
         
     }
 
+    updateInventory = (itemData) => {
+        console.log(itemData)
+        this.setState({
+            inventoryList : itemData
+        })
+    }
+
     render () {
 
         // console.log(this.state.loadedInventory)
 
         if (this.state.loadedInventory) {
             return (
-                <main className="inventory">
+                <>
+                   
+                    <main className="inventory">
+                        
+                        <h1 className="inventory__title">Inventory</h1>
+                        
+                        {/* <SearchBar /> */}
 
-                    <h1 className="inventory__title">Inventory</h1>
+                        {/* <TableHeader /> */}
+        
+                        <ProductList 
+                            content={this.state.inventoryList} 
+                            updateInventory = {this.updateInventory}
+                        />
 
-                    {/* <SearchBar /> */}
-
-                    {/* <TableHeader /> */}
-    
-                    <ProductList content={this.state.inventoryList} />
-
-                    {/* <ModalButton /> */}
-                    
-                </main>
+                        {/* <ModalButton /> */}
+                        
+                    </main>
+                </>
             )
         }
         else {return "loading"}
