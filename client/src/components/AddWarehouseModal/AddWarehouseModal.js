@@ -6,6 +6,20 @@ import "./addwarehousemodal.scss";
 
 Modal.setAppElement('#root');
 
+const modalStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)'
+  }
+  // overlay: {
+  //   backgroundColor: rgba(0, 0, 0, 0.6)
+  // }
+}
+
 const AddWarehouseModal = ({ isOpen, closeModal }) => {
 
   // const { handleSubmit } = props;
@@ -18,7 +32,7 @@ const AddWarehouseModal = ({ isOpen, closeModal }) => {
   return (
     <>
       {isOpen &&
-        <Modal isOpen={isOpen}>
+        <Modal isOpen={isOpen} style={modalStyles}>
           <h2 className="modal-form__heading">Add New</h2>
           <form className="modal-form">
             <div className="modal-form__row">
@@ -72,8 +86,6 @@ const AddWarehouseModal = ({ isOpen, closeModal }) => {
                 />
               </div>
             </div>
-
-
           </form>
           <button onClick={closeModal}>Cancel</button>
         </Modal>
