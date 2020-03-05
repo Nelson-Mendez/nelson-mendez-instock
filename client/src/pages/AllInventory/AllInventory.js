@@ -30,7 +30,7 @@ export default class AllInventory extends React.Component {
 
     render () {
 
-        console.log(this.state.loadedInventory)
+        // console.log(this.state.loadedInventory)
 
         if (this.state.loadedInventory) {
             return (
