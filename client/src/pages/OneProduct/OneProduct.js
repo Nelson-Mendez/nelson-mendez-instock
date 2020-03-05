@@ -145,7 +145,7 @@ class OneProduct extends Component {
 
                     <button className="OneProduct__edit-btn">
                             Edit
-                        </button>
+                    </button>
                 </div>
 
                 </div>

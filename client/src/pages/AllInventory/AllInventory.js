@@ -30,6 +30,13 @@ export default class AllInventory extends React.Component {
         
     }
 
+    updateInventory = (itemData) => {
+        console.log(itemData)
+        this.setState({
+            inventoryList : itemData
+        })
+    }
+
     render () {
 
         // console.log(this.state.loadedInventory)
@@ -41,12 +48,15 @@ export default class AllInventory extends React.Component {
                     <main className="inventory">
                         
                         <h1 className="inventory__title">Inventory</h1>
-
+                        Hi
                         {/* <SearchBar /> */}
 
                         {/* <TableHeader /> */}
         
-                        <ProductList content={this.state.inventoryList} />
+                        <ProductList 
+                            content={this.state.inventoryList} 
+                            updateInventory = {this.updateInventory}
+                        />
 
                         {/* <ModalButton /> */}
                         
