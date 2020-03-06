@@ -65,22 +65,25 @@
   }
   &__button {
     position: fixed;
+    bottom: 20px;
+    right: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 6%;
-    right: 10%;
     background-color: $dark-blue;
     outline: none;
     border: none;
-    width: 65px;
-    height: 65px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     cursor: pointer;
+    @include tablet {
+      bottom: 8%;
+    }
   }
   &__buttonimg {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
   }
 }
 

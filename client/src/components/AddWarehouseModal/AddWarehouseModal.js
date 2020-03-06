@@ -12,7 +12,7 @@ const URL = "http://localhost:8080/"
 const modalStyles = {
   content: {
     padding: '0',
-    top: '50%',
+    top: '55%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
@@ -69,7 +69,7 @@ const AddWarehouseModal = ({ isOpen, closeModal, getWarehouseList }) => {
             <div className="modal-form__row">
               <div className="modal-form__field">
                 <label className="modal-form__label">ADDRESS</label>
-                <input className="modal-form__input" name="street" placeholder="Address" />
+                <input className="modal-form__input" name="street" placeholder="Enter Address" />
               </div>
               <div className="modal-form__field">
                 <label className="modal-form__label">LOCATION</label>
