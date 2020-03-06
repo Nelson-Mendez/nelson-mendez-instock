@@ -45,9 +45,9 @@ class AllWarehouses extends React.Component {
     this.getWarehouseList();
   }
 
-  componentShouldUpdate() {
-    this.getWarehouseList();
-  }
+  // componentShouldUpdate() {
+  //   this.getWarehouseList();
+  // }
 
   render() {
     return (

@@ -11,6 +11,7 @@ const URL = "http://localhost:8080/"
 
 const modalStyles = {
   content: {
+    padding: '0',
     top: '50%',
     left: '50%',
     right: 'auto',
@@ -54,45 +55,45 @@ const AddWarehouseModal = ({ isOpen, closeModal, getWarehouseList }) => {
     <>
       {isOpen &&
         <Modal isOpen={isOpen} style={modalStyles}>
-          <h2 className="modal-form__heading">Add New</h2>
           <form onSubmit={handleSubmit} className="modal-form">
+            <h2 className="modal-form__heading">Add New</h2>
             <div className="modal-form__row">
               <div className="modal-form__field">
                 <label className="modal-form__label">WAREHOUSE</label>
-                <input className="modal-form__name" name="name" placeholder="Name" />
+                <input className="modal-form__input" name="name" placeholder="Name" />
               </div>
               <div className="modal-form__field">
-                <input className="modal-form__name" name="id" placeholder="Id" />
+                <input className="modal-form__input" name="id" placeholder="Id" />
               </div>
             </div>
             <div className="modal-form__row">
               <div className="modal-form__field">
                 <label className="modal-form__label">ADDRESS</label>
-                <input className="modal-form__name" name="street" placeholder="Address" />
+                <input className="modal-form__input" name="street" placeholder="Address" />
               </div>
               <div className="modal-form__field">
                 <label className="modal-form__label">LOCATION</label>
-                <input className="modal-form__name" name="location" placeholder="Location" />
+                <input className="modal-form__input" name="location" placeholder="Location" />
               </div>
             </div>
             <div className="modal-form__row">
               <div className="modal-form__field">
                 <label className="modal-form__label">CONTACT NAME</label>
-                <input className="modal-form__name" name="contactName" placeholder="Enter Name" />
+                <input className="modal-form__input" name="contactName" placeholder="Enter Name" />
               </div>
               <div className="modal-form__field">
                 <label className="modal-form__label">POSITION</label>
-                <input className="modal-form__name" name="position" placeholder="Enter Position" />
+                <input className="modal-form__input" name="position" placeholder="Enter Position" />
               </div>
             </div>
             <div className="modal-form__row">
               <div className="modal-form__field">
                 <label className="modal-form__label">PHONE NUMBER</label>
-                <input className="modal-form__name" name="phone" placeholder="(000) - 000 - 0000" />
+                <input className="modal-form__input" name="phone" placeholder="(000)-000-0000" />
               </div>
               <div className="modal-form__field">
                 <label className="modal-form__label">EMAIL</label>
-                <input className="modal-form__name" name="email" placeholder="email@instock.com" />
+                <input className="modal-form__input" name="email" type="email" placeholder="email@instock.com" />
               </div>
             </div>
             <div className="modal-form__row">
@@ -101,15 +102,14 @@ const AddWarehouseModal = ({ isOpen, closeModal, getWarehouseList }) => {
                 <textarea
                   name="categories"
                   type="text"
-                  className="form__input"
+                  className="modal-form__input modal-form__input--large"
                   placeholder="Use commas to separate each category"
-                  required
                 />
               </div>
             </div>
             <button type="submit">Save</button>
+            <button onClick={closeModal}>Cancel</button>
           </form>
-          <button onClick={closeModal}>Cancel</button>
         </Modal>
       }
     </>

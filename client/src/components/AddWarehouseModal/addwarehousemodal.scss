@@ -2,6 +2,50 @@
 @import "../../PartialStyles/mixins";
 @import "../../PartialStyles/variables";
 
+
+.modal-form {
+  width: 320px;
+  height: 100vh;
+  padding: 16px;
+  &__heading {
+    @include mb-text-1;
+    margin: $spacing-med 0;
+  }
+  &__field {
+    margin-top: $spacing-med;
+  }
+  &__label {
+    @include label-text;
+    color: $grey;
+  }
+  &__input {
+    @include mb-text-2;
+    width: 100%;
+    height: 50px;
+    padding-top: 2px;
+    padding-left: 20px;
+    border: 1px solid $light-grey;
+    border-radius: 5px;
+    background: $off-white;
+    resize: none;
+    &::placeholder{
+      color: $black;
+    }
+    &:focus{
+      outline: none;
+    }
+    &--large {
+      height: 80px;
+      padding-top: 10px;
+      margin-bottom: $spacing-med;
+      resize: none;
+    }
+  }
+}
+
+
+
+
 // .ReactModal__Overlay {
 //   position: fixed;
 //   top: 0;
