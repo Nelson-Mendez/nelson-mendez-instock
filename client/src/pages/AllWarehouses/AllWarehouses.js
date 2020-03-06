@@ -50,6 +50,7 @@ class AllWarehouses extends React.Component {
   render() {
     return (
       <>
+        
         <div className="warehouses">
           <div className="warehouses__title-wrap">
             <h1 className="warehouses__title">Locations</h1>

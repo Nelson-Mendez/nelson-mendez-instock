@@ -8,6 +8,7 @@ import plusSign from '../../assets/Icons/SVG/Icon-add.svg'
 
 import './allinventory.scss';
 
+
 export default class AllInventory extends React.Component {
 
     state = {
@@ -46,6 +47,13 @@ export default class AllInventory extends React.Component {
         this.getInventoryList();
     }
 
+    updateInventory = (itemData) => {
+        console.log(itemData)
+        this.setState({
+            inventoryList : itemData
+        })
+    }
+
     render () {
 
         if (this.state.loadedInventory) {
@@ -58,7 +66,10 @@ export default class AllInventory extends React.Component {
 
                     {/* <TableHeader /> */}
     
-                    <ProductList content={this.state.inventoryList} />
+                    <ProductList 
+                        content={this.state.inventoryList} 
+                        updateInventory = {this.updateInventory}
+                    />
 
                     <button className="addButton" onClick={this.openModal}>
                         <img src={plusSign} />
@@ -66,7 +77,22 @@ export default class AllInventory extends React.Component {
                     
                     <AddInventoryModal isOpen={this.state.modalIsOpen} contentLabel="onRequestClose" onRequestClose={this.closeModal} closeModal={this.closeModal} portalClassName="AddInventoryModal" getInventoryList={this.getInventoryList} />
                                 
-                </main>
+               
+                
+                   
+                    
+                        
+                        
+                        
+                        
+
+                        
+        
+
+                       
+                        
+                    
+                
             )
         }
         else {return "loading"}

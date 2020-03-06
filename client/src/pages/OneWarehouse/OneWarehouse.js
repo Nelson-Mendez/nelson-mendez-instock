@@ -26,6 +26,7 @@ class OneWarehouse extends React.Component {
     if (this.state.loadedData) {
       return (
         <>
+          
           <h1>{this.state.warehouseData.name}</h1>
           <h4>Address</h4>
           <p>{this.state.warehouseData.address.street}</p>

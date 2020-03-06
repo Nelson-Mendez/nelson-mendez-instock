@@ -63,7 +63,7 @@ class OneProduct extends Component {
             {this.state.itemData.isInstock ? (
               <button className="OneProduct__stock-btn OneProduct__stock-btn--instock">
                 In Stock
-                            </button>) : (
+              </button>) : (
                 <button className="OneProduct__stock-btn OneProduct__stock-btn--outstock">
                   Out of Stock
                             </button>
