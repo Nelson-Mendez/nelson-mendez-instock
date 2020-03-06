@@ -6,13 +6,37 @@
 .modal-form {
   width: 320px;
   height: 100vh;
-  padding: 16px;
+  padding: $spacing-sm;
+  @include tablet {
+    height: 80vh;
+    max-height: 1000px;
+    width: 600px;
+    padding: $spacing-lg;
+  }
   &__heading {
     @include mb-text-1;
     margin: $spacing-med 0;
+    @include tablet {
+      @include text-1;
+    }
+  }
+  &__row {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__field {
     margin-top: $spacing-med;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+    &--large {
+      @include tablet {
+        width: 100%;
+      }
+    }
   }
   &__label {
     @include label-text;
@@ -28,6 +52,10 @@
     border-radius: 5px;
     background: $off-white;
     resize: none;
+    @include tablet {
+      width: 235px;
+
+    }
     &::placeholder{
       color: $black;
     }
@@ -39,12 +67,18 @@
       padding-top: 10px;
       margin-bottom: $spacing-med;
       resize: none;
+      @include tablet {
+        width: 100%;
+      }
     }
   }
   &__buttonwrap {
     display: flex;
     flex-direction: column;
     margin-bottom: $spacing-med;
+    @include tablet {
+      flex-direction: row-reverse;
+    }
   }
   &__button {
     @include mb-text-2;
@@ -57,6 +91,9 @@
     font-family: "AvenirNextDemiBold";
     color: $dark-blue;
     cursor: pointer;
+    @include tablet {
+      width: 150px;
+    }
     &--blue {
       background-color: $dark-blue;
       color: $white;

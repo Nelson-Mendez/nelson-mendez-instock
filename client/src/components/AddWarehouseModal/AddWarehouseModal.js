@@ -62,7 +62,8 @@ const AddWarehouseModal = ({ isOpen, closeModal, getWarehouseList }) => {
                 <input className="modal-form__input" name="name" placeholder="Name" />
               </div>
               <div className="modal-form__field">
-                <input className="modal-form__input" name="id" placeholder="ID" />
+                <label className="modal-form__label">ID</label>
+                <input className="modal-form__input modal-form__input--id" name="id" placeholder="ID" />
               </div>
             </div>
             <div className="modal-form__row">
@@ -72,7 +73,11 @@ const AddWarehouseModal = ({ isOpen, closeModal, getWarehouseList }) => {
               </div>
               <div className="modal-form__field">
                 <label className="modal-form__label">LOCATION</label>
-                <input className="modal-form__input" name="location" placeholder="Location" />
+                <select className="modal-form__input" name="location">
+                  <option value="Toronto, CAN">Toronto, CAN</option>
+                  <option value="Mississauga, CAN">Mississauga, CAN</option>
+                  <option value="Vancouver, CAN">Vancouver, CAN</option>
+                </select>
               </div>
             </div>
             <div className="modal-form__row">
@@ -96,7 +101,7 @@ const AddWarehouseModal = ({ isOpen, closeModal, getWarehouseList }) => {
               </div>
             </div>
             <div className="modal-form__row">
-              <div className="modal-form__field">
+              <div className="modal-form__field modal-form__field--large">
                 <label className="modal-form__label">CATEGORIES</label>
                 <textarea
                   name="categories"
