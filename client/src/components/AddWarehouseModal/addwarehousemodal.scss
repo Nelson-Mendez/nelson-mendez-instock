@@ -41,38 +41,27 @@
       resize: none;
     }
   }
+  &__buttonwrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $spacing-med;
+  }
+  &__button {
+    @include mb-text-2;
+    height: 50px;
+    background-color: $white;
+    margin-bottom: $spacing-sm;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: "AvenirNextDemiBold";
+    color: $dark-blue;
+    cursor: pointer;
+    &--blue {
+      background-color: $dark-blue;
+      color: $white;
+      cursor: pointer;
+    }
+  }
 }
 
-
-
-
-// .ReactModal__Overlay {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   background-color: rgba(0,0,0,0.6);
-//   &--after-open {
-//     @extend .ReactModal__Overlay;
-//   }
-// }
-
-// const styles = {
-//   overlay: {
-//     position: "fixed",
-//     top: 0,
-//     left: 0,
-//     right: 0,
-//     bottom: 0,
-//     backgroundColor: "rgba(0,0,0,0.6)"
-//   },
-//   content: {
-//     top: '50%',
-//     left: '50%',
-//     right: 'auto',
-//     bottom: 'auto',
-//     marginRight: '-50%',
-//     transform: 'translate(-50%, -50%)'
-//   }
-// }

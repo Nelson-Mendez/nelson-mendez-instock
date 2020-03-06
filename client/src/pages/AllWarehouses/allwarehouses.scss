@@ -63,6 +63,25 @@
       }
     }
   }
+  &__button {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 6%;
+    right: 10%;
+    background-color: $dark-blue;
+    outline: none;
+    border: none;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  &__buttonimg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 

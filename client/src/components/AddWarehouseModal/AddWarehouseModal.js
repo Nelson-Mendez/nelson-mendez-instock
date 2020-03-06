@@ -50,7 +50,6 @@ const AddWarehouseModal = ({ isOpen, closeModal, getWarehouseList }) => {
     closeModal()
   }
 
-
   return (
     <>
       {isOpen &&
@@ -63,7 +62,7 @@ const AddWarehouseModal = ({ isOpen, closeModal, getWarehouseList }) => {
                 <input className="modal-form__input" name="name" placeholder="Name" />
               </div>
               <div className="modal-form__field">
-                <input className="modal-form__input" name="id" placeholder="Id" />
+                <input className="modal-form__input" name="id" placeholder="ID" />
               </div>
             </div>
             <div className="modal-form__row">
@@ -107,8 +106,10 @@ const AddWarehouseModal = ({ isOpen, closeModal, getWarehouseList }) => {
                 />
               </div>
             </div>
-            <button type="submit">Save</button>
-            <button onClick={closeModal}>Cancel</button>
+            <div className="modal-form__buttonwrap">
+              <button className="modal-form__button modal-form__button--blue" type="submit">SAVE</button>
+              <button className="modal-form__button" onClick={closeModal}>CANCEL</button>
+            </div>
           </form>
         </Modal>
       }
