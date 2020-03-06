@@ -77,7 +77,7 @@ export default class AllInventory extends React.Component {
                     
                     <AddInventoryModal isOpen={this.state.modalIsOpen} contentLabel="onRequestClose" onRequestClose={this.closeModal} closeModal={this.closeModal} portalClassName="AddInventoryModal" getInventoryList={this.getInventoryList} />
                                 
-               
+               </main>
                 
                    
                     
