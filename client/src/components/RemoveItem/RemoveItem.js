@@ -1,6 +1,7 @@
 import React from 'react';
 import kebab from '../../assets/Icons/SVG/Icon-kebab-default.svg'; 
 import axios from 'axios'
+import "./removeitem.scss"
 
 const RemoveItem = (props) => {
 
