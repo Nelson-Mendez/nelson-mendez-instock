@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import axios from "axios";
 import Modal from 'react-modal';
 import {v4 as uuidv4} from 'uuid';
+// import "../../PartialStyles/fonts";
+// import "../../PartialStyles/variables";
+// import "../../PartialStyles/mixins";
 
 
 import "./addinventorymodal.scss";
@@ -13,6 +16,8 @@ const URL = "http://localhost:8080/"
 
 const modalStyles = {
   content: {
+    height: '80%',
+    width: '80%',
     top: '50%',
     left: '50%',
     right: 'auto',
@@ -40,7 +45,6 @@ const AddInventoryModal = ({ isOpen, closeModal, getInventoryList }) => {
         city: event.target.city.value,
         country: event.target.country.value,
         isInstock: event.target.status.value,
-        // categories: event.target.categories.value
       })
       .then(res => {
         getInventoryList();
@@ -62,27 +66,27 @@ const AddInventoryModal = ({ isOpen, closeModal, getInventoryList }) => {
             <div className="modal-form__row">
               <div className="modal-form__field">
                 <label className="modal-form__label">PRODUCT</label>
-                <input className="modal-form__name" name="productname" placeholder="Name" />
+                <input className="modal-form__name" name="productname" placeholder="Item Name" />
               </div>
               <div className="modal-form__field">
                 <label className="modal-form__label">LAST ORDERED</label>
-                <input className="modal-form__name" name="lastordered" placeholder="last ordered" />
+                <input className="modal-form__name" name="lastordered" placeholder="yyyy-mm-dd" />
               </div>
             </div>
             <div className="modal-form__row">
               <div className="modal-form__field">
                 <label className="modal-form__label">CITY</label>
-                <input className="modal-form__name" name="city" placeholder="Address" />
+                <input className="modal-form__name" name="city" placeholder="City" />
               </div>
               <div className="modal-form__field">
                 <label className="modal-form__label">COUNTRY</label>
-                <input className="modal-form__name" name="country" placeholder="Location" />
+                <input className="modal-form__name" name="country" placeholder="Country" />
               </div>
             </div>
             <div className="modal-form__row">
               <div className="modal-form__field">
                 <label className="modal-form__label">QUANTITY</label>
-                <input className="modal-form__name" name="quantity" placeholder="Enter Name" />
+                <input className="modal-form__name" name="quantity" placeholder="Quantity" />
               </div>
               <div className="modal-form__field">
                 <label className="modal-form__label">STAUS</label>
@@ -92,28 +96,14 @@ const AddInventoryModal = ({ isOpen, closeModal, getInventoryList }) => {
             <div className="modal-form__row">
               <div className="modal-form__field">
                 <label className="modal-form__label">ITEM DESCRIPTION</label>
-                <textarea className="modal-form__name" name="description" placeholder="(000) - 000 - 0000" />
+                <textarea className="modal-form__name modal-form__name--description" name="description" placeholder="(Optional)" />
               </div>
-              {/* <div className="modal-form__field">
-                <label className="modal-form__label">EMAIL</label>
-                <input className="modal-form__name" name="email" placeholder="email@instock.com" />
-              </div> */}
+             
             </div>
-            {/* <div className="modal-form__row">
-              <div className="modal-form__field">
-                <label className="modal-form__label">CATEGORIES</label>
-                <textarea
-                  name="categories"
-                  type="text"
-                  className="form__input"
-                  placeholder="Use commas to separate each category"
-                  required
-                />
-              </div>
-            </div> */}
-            <button type="submit">Save</button>
+         
+            <button className="modal-form__button--save" type="submit">Save</button>
           </form>
-          <button onClick={closeModal}>Cancel</button>
+          <button className="modal-form__button--cancel" onClick={closeModal}>Cancel</button>
         </Modal>
       }
     </>

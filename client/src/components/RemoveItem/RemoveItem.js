@@ -7,7 +7,7 @@ const RemoveItem = (props) => {
         return (
             <div className="container">
                 <button onClick={props.handleShowMenu} {...props} type="button" class="button">
-                    <img src={kebab} className="kebab" />
+                    <img src={kebab} alt="" className="kebab" />
                 </button>
                 {props.showMenu &&
                 <div className="dropdown">

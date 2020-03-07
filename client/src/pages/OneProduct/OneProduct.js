@@ -46,7 +46,7 @@ class OneProduct extends Component {
 
 
   render() {
-    console.log(this.state.warehouseData.contact)
+    // console.log(this.state.warehouseData.contact)
     return (
       <div className="OneProduct">
         <div className="OneProduct__container">

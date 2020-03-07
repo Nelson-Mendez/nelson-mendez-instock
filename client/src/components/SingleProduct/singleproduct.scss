@@ -3,33 +3,59 @@
 @import "../../PartialStyles/mixins";
 
 .SingleProduct {
-
+    
     font-family: "AvenirNextRegular";
     color: $black;
-
+    
     &__container {
-        width: 90%;
+        width: 100%;
         margin: 1rem auto;
         border-bottom: 0.15rem solid $grey;
         padding-bottom: 3rem;
         position: relative;
+        
+        @include tablet {
+            margin: 1rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
     }
-
+    
     &__section-container {
         margin-top: 2.75rem;
-    }
 
+        
+        @include tablet {
+            width: 8.611%;
+            display: flex;
+            justify-content: flex-start;;
+        
+            &--product {
+                display: block;
+                width: 17.22%;
+            }
+        }
+    }
+    
     &__title {
         text-transform: uppercase;
         color: $grey;
         font-size: 1.75rem;
         font-family: "AvenirNextDemiBold";
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.5rem; 
+        
+        @include tablet {
+            display: none;
+        }
     }
 
     &__information {
 
         font-size: 1.75rem;
+
+        @include tablet {
+            width: 17.22%rem;
+        }
 
         &--name {
             font-family: 'AvenirNextBold';
@@ -48,40 +74,13 @@
         top: 0%;
         left: 100%;
         
-
-        &:focus {
-            outline: none
-        }
-    }
-}
-
-@include tablet {
-    .SingleProduct {
-
-        &__container {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        &__section-container {
-            display: flex;
-            align-items: center;
-
-            &--product {
-                display: block;
-                width: 40%
-            }
-        }
-
-        &__title {
-            display: none;
-        }
-
-        &__delete-btn {
+        @include tablet {
             display: block;
             position: relative;
         }
 
-        
+        &:focus {
+            outline: none
+        }
     }
 }

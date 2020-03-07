@@ -43,8 +43,15 @@ export default class SingleProduct extends React.Component {
     (this.props.content.isInstock === true ? status = "In Stock" : status = "Out of Stock");
     return (
         <div className="SingleProduct">
+
+            {/* <div className="inventory__table-heading">
+                    <h3 className="inventory__table--large">ITEM</h3>
+                    <h3 className="inventory__table">LAST ORDERED</h3>
+                    <h3 className="inventory__table">LOCATIONS</h3>
+                    <h3 className="inventory__table">QUANTITY</h3>
+                    <h3 className="inventory__table">STATUS</h3>
+                </div>   */}
             <div className="SingleProduct__container">
-            {/* <Link className="link" key={this.props.content.id} to={`/inventory/${this.props.content.id}`}> */}
                 <div className="SingleProduct__section-container SingleProduct__section-container--product">
                     <h3 className="SingleProduct__title">
                         item
@@ -92,7 +99,6 @@ export default class SingleProduct extends React.Component {
                     {status}
                     </p>
                 </div>
-                {/* </Link> */}
                 <div className="SingleProduct__section-container SingleProduct__section-container--button">
                     <RemoveItem 
                         handleShowMenu={this.handleShowMenu.bind(this)} 
@@ -102,46 +108,7 @@ export default class SingleProduct extends React.Component {
                 </div>
 
             </div>
-        </div>
+         </div>
     )
     }
 }
-
-/*
-import React from 'react';
-import Kebab from '../../assets/Icons/SVG/Icon-kebab-default.svg';
-import './singleproduct.scss'
-
-export default function SingleProduct (props) {
-    
-    // const status = "";
-    // (props.content.status === true ? status = "In Stock" : status = "Out of Stock");
-
-    return (
-        <div className="item">
-
-            <p className="item__heading">ITEM</p>
-            <p className="item__detail item__detail--bold">{props.content.name}</p>
-            <p className="item__detail">{props.content.description}</p>
-
-    
-            <p className="item__heading">LAST ORDERED</p>
-            <p className="item__detail">{props.content.lastOrdered}</p>
-
-            <p className="item__heading">LOCATION</p>
-            <p className="item__detail">{props.content.city}, {props.content.country}</p>
-
-            <p className="item__heading">QUANTITY</p>
-            <p className="item__detail">{props.content.quantity}</p>
-
-            <p className="item__heading">STATUS</p>
-            {/* <p className="item__detail">{status}</p> */
-
-            
-/*
-        </div>
-    )
-
-}
-
-*/
