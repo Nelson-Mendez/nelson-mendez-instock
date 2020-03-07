@@ -1,5 +1,6 @@
 const router = require('express').Router();
 let inventoryData = require('../data/inventory.json');
+const locations = require('../data/locations.json');
 const uuid = require('uuid')
 
 router.get('/', (req, res) => {
@@ -18,6 +19,26 @@ router.get('/:id', (req, res) => {
         return res.status(200).send(item)
     }
 })
+
+router.get('/warehouses/:id', (req, res) => {
+    const warehouseId = req.params.id; 
+    let foundWarehouse = locations.find(location => {
+        return warehouseId === location.id; 
+    }); 
+
+    let associatedInventory = inventoryData.filter(object => {
+        return warehouseId === object.warehouseId; 
+    })
+
+    if (!foundWarehouse) {
+        return res.status(404).send('Request Rejected'); 
+    }
+    foundWarehouse = {
+        ...foundWarehouse,
+        inventory: associatedInventory,
+    }
+    res.send(foundWarehouse);
+}); 
 
 router.post('/add', (req, res) => {
     const {body} = req

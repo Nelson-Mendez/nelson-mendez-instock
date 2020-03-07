@@ -19,7 +19,7 @@ export default function ProductList (props) {
                     <SingleProduct 
                         content={item}
                         transferUpdatedInventory = {transferUpdatedInventory}
-                        />
+                    />
                 </Link>);
             })}
         </>
