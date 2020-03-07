@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { Component } from 'react';
 import './nav.scss';
 import logo from '../../assets/Logo/Logo-instock.svg';
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 
-export default function Nav() {
-    return (
-        <nav class="Header">
+
+
+class Nav extends Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            url : this.props.match
+        }
+    }
+    
+    render() {
+
+        return (
+            <nav class="Header">
             <ul class="Header__nav-list">
                 <li class="Header__nav-list-item Header__nav-list-item--logo">
                     <Link to="/" class="Header__nav-link Header__nav-link--logo">
@@ -15,18 +27,28 @@ export default function Nav() {
                 </li>
                 <div class="Header__links-container">
                     <li class="Header__nav-list-item Header__nav-list--links">
-                        <Link to="/inventory" class="Header__nav-link Header__nav-link--active">
+                        <NavLink 
+                            to="/inventory" 
+                            className="Header__nav-link"
+                            activeClassName="Header__nav-link Header__nav-link--active"
+                            >
                             <span> Inventory</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li class="Header__nav-list-item Header__nav-list--links">
-                        <Link to="/warehouses" class="Header__nav-link Header__nav-link--location">
+                        <NavLink 
+                            to="/warehouses" 
+                            className="Header__nav-link"
+                            activeClassName="Header__nav-link Header__nav-link--active"    
+                        >
                             Locations
-                        </Link>
+                        </NavLink>
                     </li>
                 </div>
             </ul>
         </nav>
-
-    )
+        );
+    }
 }
+
+export default Nav;

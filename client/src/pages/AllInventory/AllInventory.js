@@ -1,10 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-// import SearchBar from '../../components/SearchBar/SearchBar';
-// import ModalButton from '../../components/ModalButton/ModalButton';
-import './allinventory.scss';
-import ProductList from '../../components/ProductList/ProductList.js';
 
+import SearchBar from '../../components/SearchBar/SearchBar';
+import ProductList from '../../components/ProductList/ProductList.js';
+import AddInventoryModal from '../../components/AddInventoryModal/AddInventoryModal';
+import plusSign from '../../assets/Icons/SVG/Icon-add.svg'
+
+import './allinventory.scss';
 
 
 export default class AllInventory extends React.Component {
@@ -12,11 +14,19 @@ export default class AllInventory extends React.Component {
     state = {
         inventoryList:  [],
         loadedInventory: false,
-        modalClicked: false
+        modalIsOpen: false
     }
 
-    componentDidMount () {
+    openModal = () => {
+        this.setState({ modalIsOpen: true })
+    }
+    
+    closeModal = () => {
+        this.setState({ modalIsOpen: false })
+    }
 
+    getInventoryList = () => {
+        
         axios
         .get('http://localhost:8080/inventory')
         .then(response => {
@@ -26,12 +36,25 @@ export default class AllInventory extends React.Component {
                 loadedInventory: true
             })
         })
+        .catch(err => {
+            throw err;
+        })
+    }
+
         
+
+    componentDidMount () {
+        this.getInventoryList();
+    }
+
+    updateInventory = (itemData) => {
+        console.log(itemData)
+        this.setState({
+            inventoryList : itemData
+        })
     }
 
     render () {
-
-        // console.log(this.state.loadedInventory)
 
         if (this.state.loadedInventory) {
             return (
@@ -39,15 +62,37 @@ export default class AllInventory extends React.Component {
 
                     <h1 className="inventory__title">Inventory</h1>
 
-                    {/* <SearchBar /> */}
+                    <SearchBar />
 
                     {/* <TableHeader /> */}
     
-                    <ProductList content={this.state.inventoryList} />
+                    <ProductList 
+                        content={this.state.inventoryList} 
+                        updateInventory = {this.updateInventory}
+                    />
 
-                    {/* <ModalButton /> */}
+                    <button className="addButton" onClick={this.openModal}>
+                        <img src={plusSign} />
+                    </button>
                     
-                </main>
+                    <AddInventoryModal isOpen={this.state.modalIsOpen} contentLabel="onRequestClose" onRequestClose={this.closeModal} closeModal={this.closeModal} portalClassName="AddInventoryModal" getInventoryList={this.getInventoryList} />
+                                
+               </main>
+                
+                   
+                    
+                        
+                        
+                        
+                        
+
+                        
+        
+
+                       
+                        
+                    
+                
             )
         }
         else {return "loading"}
