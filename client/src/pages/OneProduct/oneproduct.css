@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "AvenirNextRegular";
+  src: url("../assets/Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "AvenirNextBold";
+  src: url("../assets/Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf");
+}
+
+@font-face {
+  font-family: "AvenirNextDemiBold";
+  src: url("../assets/Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf");
+}
+
+@font-face {
+  font-family: "AvenirNextRegular";
+  src: url("../assets/Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "AvenirNextBold";
+  src: url("../assets/Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf");
+}
+
+@font-face {
+  font-family: "AvenirNextDemiBold";
+  src: url("../assets/Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf");
+}
+
+.OneProduct {
+  font-family: "AvenirNextRegular";
+}
+
+.OneProduct__container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 2.5rem;
+}
+
+.OneProduct__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'AvenirNextBold';
+  font-size: 4rem;
+  color: #323232;
+  margin-bottom: -0.1rem;
+  height: 7rem;
+}
+
+.OneProduct__backBtn {
+  width: 2.25rem;
+  margin-right: 2rem;
+}
+
+.OneProduct__stock-btn {
+  background-color: #67b329;
+  border: none;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  font-family: 'AvenirNextDemiBold';
+  color: #FFF;
+}
+
+.OneProduct__stock-btn--outstock {
+  background-color: #991a1a;
+}
+
+.OneProduct__section-container {
+  margin-top: 3rem;
+}
+
+.OneProduct__title {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  color: #AFAFAF;
+}
+
+.OneProduct__info {
+  font-size: 1.7rem;
+}
+
+.OneProduct__edit-btn {
+  margin-top: 4rem;
+  width: 100%;
+  padding: 2rem;
+  font-size: 2rem;
+  font-family: 'AvenirNextDemiBold';
+  text-transform: uppercase;
+  color: #FFF;
+  background-color: #045ea7;
+  border: none;
+  border-radius: 0.4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .OneProduct__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .OneProduct__sections-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .OneProduct__section-container {
+    margin-right: auto;
+    width: 20rem;
+  }
+  .OneProduct__section-container--description {
+    width: 100%;
+  }
+  .OneProduct__section-container--category {
+    width: 100%;
+    border-bottom: 0.15rem solid #E1E1E1;
+    padding-bottom: 3rem;
+  }
+  .OneProduct__edit-btn {
+    width: 25rem;
+    margin-left: auto;
+  }
+  .OneProduct__header-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .OneProduct__stock-btn {
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .OneProduct__information-container {
+    width: 100%;
+  }
+  .OneProduct__all-sections-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 0.15rem solid #E1E1E1;
+  }
+  .OneProduct__section-container--category {
+    border: none;
+  }
+  .OneProduct__header-container {
+    border-bottom: 0.15rem solid #E1E1E1;
+    padding-bottom: 5rem;
+  }
+}
+/*# sourceMappingURL=oneproduct.css.map */
