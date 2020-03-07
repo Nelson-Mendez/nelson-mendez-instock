@@ -28,17 +28,18 @@
   src: url("../assets/Font/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf");
 }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: "AvenirNextRegular";
+.container {
+  position: relative;
 }
 
-html {
-  font-size: 62.5%;
+.dropdown {
+  position: absolute;
+  width: 100px;
+  height: 25px;
+  border: 1px solid #AFAFAF;
 }
-/*# sourceMappingURL=App.css.map */
+
+.dropdown__text {
+  padding: 6px 10px;
+}
+/*# sourceMappingURL=removeitem.css.map */
