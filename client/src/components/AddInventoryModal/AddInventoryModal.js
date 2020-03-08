@@ -100,7 +100,7 @@ const AddInventoryModal = ({ isOpen, closeModal, getInventoryList }) => {
               </div>
              
             </div>
-         
+            <div></div>
             <button className="modal-form__button--save" type="submit">Save</button>
           </form>
           <button className="modal-form__button--cancel" onClick={closeModal}>Cancel</button>
