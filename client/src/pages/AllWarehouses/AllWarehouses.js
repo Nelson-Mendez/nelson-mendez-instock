@@ -7,6 +7,7 @@ import AddWarehouseModal from '../../components/AddWarehouseModal/AddWarehouseMo
 import "./allwarehouses.scss";
 import SingleWarehouse from "../../components/SingleWarehouse/SingleWarehouse";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import Add from "../../assets/Icons/SVG/Icon-add.svg";
 
 const URL = "http://localhost:8080/"
 
@@ -45,12 +46,10 @@ class AllWarehouses extends React.Component {
     this.getWarehouseList();
   }
 
-  
-
   render() {
     return (
       <>
-        
+
         <div className="warehouses">
           <div className="warehouses__title-wrap">
             <h1 className="warehouses__title">Locations</h1>
@@ -79,8 +78,7 @@ class AllWarehouses extends React.Component {
               )
             })}
           </div>
-          <button onClick={this.openModal}>
-            PLUS SIGN GOES HERE
+          <button className="warehouses__button" onClick={this.openModal}><img className="warehouses__buttonimg" src={Add} alt="modal button" />
           </button>
           <AddWarehouseModal isOpen={this.state.modalIsOpen} contentLabel="onRequestClose" onRequestClose={this.closeModal} closeModal={this.closeModal} portalClassName="AddWarehouseModal" getWarehouseList={this.getWarehouseList} />
         </div>
