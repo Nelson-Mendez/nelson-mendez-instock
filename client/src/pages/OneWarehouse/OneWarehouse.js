@@ -12,7 +12,7 @@ class OneWarehouse extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:8080/warehouses/${this.props.match.params.id}`)
+      .get(`http://localhost:8080/inventory/warehouses/${this.props.match.params.id}`)
       .then(response => {
         console.log(response.data);
         this.setState({

@@ -14,17 +14,14 @@ export default class SingleProduct extends React.Component {
         }
         // this.handleShowMenu = this.handleShowMenu.bind(this);
     }
+
+    transferUpdatedInventory = (itemId) => {
+        console.log(itemId, 'in the SingleProduct')
+        this.props.transferUpdatedInventory(itemId)
+    }
+
     handleShowMenu (event){
         // DELETE AXIOS CALL // 
-        axios
-            .delete(`http://localhost:8080/inventory/${this.props.content.id}`)
-            .then(response => {
-                this.props.transferUpdatedInventory(response.data)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-
         
         event.preventDefault(); 
         // event.stopPropagation();
@@ -98,6 +95,7 @@ export default class SingleProduct extends React.Component {
                         handleShowMenu={this.handleShowMenu.bind(this)} 
                         showMenu={this.state.showMenu}
                         itemId = {this.props.content.id}
+                        transferUpdatedInventory = {this.transferUpdatedInventory}
                     />
                 </div>
 
