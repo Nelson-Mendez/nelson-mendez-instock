@@ -24,7 +24,7 @@ const RemoveItem = (props) => {
                     <img src={kebab} className="kebab" />
                 </button>
                 {props.showMenu &&
-                <div className="dropdown" onClick={removeItem} style ={{backgroundColor: 'yellow'}}>
+                <div className="dropdown" onClick={removeItem}>
                     <button className="dropdown__text">Remove</button>
                 </div>
 }
