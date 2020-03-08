@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-
 import SearchBar from '../../components/SearchBar/SearchBar';
 import ProductList from '../../components/ProductList/ProductList.js';
 import AddInventoryModal from '../../components/AddInventoryModal/AddInventoryModal';
