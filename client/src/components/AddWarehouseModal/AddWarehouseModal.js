@@ -11,8 +11,9 @@ const URL = "http://localhost:8080/"
 
 const modalStyles = {
   content: {
+    position: 'absolute',
     padding: '0',
-    top: '55%',
+    top: '50%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
