@@ -33,30 +33,33 @@
 	  }
 
 	  &__table-heading {
+		display: none;
+
 		@include tablet {
-		  margin: 0 $spacing-med;
+		  margin: 0;
 		  display: flex;
-		  justify-content: flex-start;;
-		//   width: 1152px;
+		  justify-content: space-between;
 		}
 	  }
+
 	  &__table {
-		  display: none;
+
 		  @include tablet {
 			  display: unset;
 			  width: 46rem;
 			  @include label-text;
 			}
+
+			&--large {
+			  display: none;
+			  @include tablet {
+				display: unset;
+				width: 92rem;
+				@include label-text;
+			  }
+			}
 		}
 		
-		&__table--large {
-		  display: none;
-		  @include tablet {
-			display: unset;
-			width: 92rem;
-			@include label-text;
-		  }
-		}
 }
 
 .addButton {
@@ -68,12 +71,26 @@
 	right: 7%;
 	display:inline-block;
 	cursor:pointer;
-    padding: 1.875rem;
+	width:6rem;
+	height: 6rem;
 	text-decoration:none;
+
+	@include tablet {
+		width:8rem;
+		height: 8rem;
+		left: 12%;
+		bottom: 12%;
+	}
 
 	&__plus {
 		height: 20px;
-		width: 25px;
+		width: 20px;
+		margin-top: 0.5rem;
+
+		@include tablet {
+			width:2.4rem;
+			height: 2.4rem;
+		}
 	}
 }
 

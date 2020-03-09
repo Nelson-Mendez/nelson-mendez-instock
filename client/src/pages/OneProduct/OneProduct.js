@@ -24,14 +24,16 @@ class OneProduct extends Component {
         this.setState({
           itemData: response.data[0]
         }, () => {
-          let url = `http://localhost:8080/warehouses/${this.state.itemData.warehouseId}`
-          axios
-            .get(url)
-            .then(response => {
-              this.setState({
-                warehouseData: response.data
+          if (response.data[0].warehouseId){
+            let url = `http://localhost:8080/warehouses/${this.state.itemData.warehouseId}`
+            axios
+              .get(url)
+              .then(response => {
+                this.setState({
+                  warehouseData: response.data
+                })
               })
-            })
+            }
         })
       })
       .catch(error => {

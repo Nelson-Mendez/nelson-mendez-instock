@@ -7,7 +7,7 @@
     background-color: $off-white; 
     font-family: "AvenirNextRegular";
     color: $black;
-    padding-top: 16px; 
+    display:flex;
 
     &__container {
         width: 90%;
@@ -16,7 +16,7 @@
         position: relative;
         
         @include tablet {
-            margin: 1rem 2.5rem;
+            margin: 1rem 0;
             display: flex;
             justify-content: space-between;
         }
@@ -27,13 +27,13 @@
 
         
         @include tablet {
-            width: 8.611%;
+            width: 46rem;
             display: flex;
-            justify-content: flex-start;;
+            justify-content: space-between;;
         
             &--product {
                 display: block;
-                width: 17.22%;
+                width: 92rem;
             }
         }
     }

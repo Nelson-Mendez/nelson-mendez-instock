@@ -1,13 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Switch from 'react-switch';
-import axios from "axios";
 import Modal from 'react-modal';
-import {v4 as uuidv4} from 'uuid';
-// import "../../PartialStyles/fonts";
-// import "../../PartialStyles/variables";
-// import "../../PartialStyles/mixins";
 
+import axios from "axios";
+import {v4 as uuidv4} from 'uuid';
 
 import "./addproductmodal.scss";
 
@@ -24,7 +20,7 @@ const modalStyles = {
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
+    transform: 'translate(-50%, -50%)'
   },
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.6)'
@@ -32,10 +28,22 @@ const modalStyles = {
 
 }
 
-const AddProductModal = ({ isOpen, closeModal, getInventoryList }) => {
+export default class AddProductModal extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      checked: false 
+    };
+    this.handleStatus = this.handleStatus.bind(this);
+  }
 
-  const handleSubmit = event => {
+  handleStatus(checked) {
+    this.setState({ checked });
+  }
+
+  handleSubmit = (event) => {
     event.preventDefault()
+    console.log(this.state.checked)
     axios
       .post(`${URL}inventory/add`, {
         id: uuidv4(),
@@ -45,25 +53,26 @@ const AddProductModal = ({ isOpen, closeModal, getInventoryList }) => {
         lastOrdered: event.target.lastordered.value,
         city: event.target.city.value,
         country: event.target.country.value,
-        isInstock: event.target.status.value,
+        isInstock: this.state.checked,
       })
       .then(res => {
-        getInventoryList();
+        this.props.getInventoryList();
       })
       .catch(err => {
         console.log(err);
       });
     event.target.reset()
-    closeModal()
+    this.props.closeModal()
   }
 
+  render () {
 
   return (
     <>
-      {isOpen &&
-        <Modal isOpen={isOpen} style={modalStyles}>
+      {this.props.isOpen &&
+        <Modal isOpen={this.props.isOpen} style={modalStyles}>
 
-          <form onSubmit={handleSubmit} className="product-modal-form">
+          <form onSubmit={this.handleSubmit} className="product-modal-form">
 
             <h2 className="product-modal-form__heading">Create New</h2>
 
@@ -76,7 +85,7 @@ const AddProductModal = ({ isOpen, closeModal, getInventoryList }) => {
               <div className="product-modal-form__field">
                 <label className="product-modal-form__label">LAST ORDERED</label>
                 <input className="product-modal-form__name" name="lastordered" placeholder="yyyy-mm-dd" required />
-              </div>              
+              </div>  
             </div>
 
             <div className="product-modal-form__row">
@@ -102,10 +111,23 @@ const AddProductModal = ({ isOpen, closeModal, getInventoryList }) => {
               </div>
 
               <div className="product-modal-form__field">
-                <label className="product-modal-form__label">STAUS</label>
+                <label className="product-modal-form__label">STATUS</label>
                 <div className="product-modal-form__status">
                     <h3>In Stock</h3>
-                    <Switch />
+                    <Switch 
+                    onChange={this.handleStatus} 
+                    checked={this.state.checked}
+                    onColor="#67b329"
+                    handleDiameter={24}
+                    uncheckedIcon={false}
+                    checkedIcon={false}
+                    boxShadow="0px 2px 5px rgba(0, 0, 0, 0.6)"
+                    activeBoxShadow="0px 0px 2px 10px rgba(0, 0, 0, 0.2)"
+                    height={24}
+                    width={40}
+                    className="react-switch"
+                    id="material-switch" 
+                    />
                 </div>
               </div>
             </div>
@@ -117,14 +139,19 @@ const AddProductModal = ({ isOpen, closeModal, getInventoryList }) => {
               </div>             
             </div>
 
-            <button className="product-modal-form__button--save" type="submit">Save</button>
+            <div className="buttons">
+              <button className="buttons__save" type="submit" >SAVE</button>
+              <button className="buttons__cancel" onClick={this.props.closeModal}>CANCEL</button>
+            </div>
+
           </form>
-          <button className="product-modal-form__button--cancel" onClick={closeModal}>Cancel</button>
+
+
         </Modal>
       } 
     </>
-  )
+  )}
 }
 
-export default AddProductModal;
+// export default AddProductModal;
 
