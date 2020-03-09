@@ -42,25 +42,36 @@ export default class AddProductModal extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    axios
-      .post(`${URL}inventory/add`, {
-        id: uuidv4(),
-        name: event.target.productname.value,
-        description: event.target.description.value,
-        quantity: event.target.quantity.value,
-        lastOrdered: event.target.lastordered.value,
-        city: event.target.city.value,
-        country: event.target.country.value,
-        isInstock: this.state.checked
-      })
-      .then(res => {
-        this.props.getInventoryList();
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    event.target.reset();
-    this.props.closeModal();
+    if (
+      event.target.productname.value &&
+      event.target.description.value &&
+      event.target.quantity.value &&
+      event.target.lastordered.value &&
+      event.target.city.value &&
+      event.target.country.value
+    ) {
+      axios
+        .post(`${URL}inventory/add`, {
+          id: uuidv4(),
+          name: event.target.productname.value,
+          description: event.target.description.value,
+          quantity: event.target.quantity.value,
+          lastOrdered: event.target.lastordered.value,
+          city: event.target.city.value,
+          country: event.target.country.value,
+          isInstock: this.state.checked
+        })
+        .then(res => {
+          this.props.getInventoryList();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      event.target.reset();
+      this.props.closeModal();
+    } else {
+      alert("Please fill in all form fields");
+    }
   };
 
   render() {
@@ -78,7 +89,6 @@ export default class AddProductModal extends React.Component {
                     className="product-modal-form__name"
                     name="productname"
                     placeholder="Item Name"
-                    required
                   />
                 </div>
 
@@ -90,7 +100,6 @@ export default class AddProductModal extends React.Component {
                     className="product-modal-form__name"
                     name="lastordered"
                     placeholder="yyyy-mm-dd"
-                    required
                   />
                 </div>
               </div>
@@ -102,7 +111,6 @@ export default class AddProductModal extends React.Component {
                     className="product-modal-form__name"
                     name="city"
                     placeholder="City"
-                    required
                   />
                 </div>
 
@@ -112,7 +120,6 @@ export default class AddProductModal extends React.Component {
                     className="product-modal-form__name"
                     name="country"
                     placeholder="Country"
-                    required
                   >
                     <option value="Canada">Canada</option>
                     <option value="United States">United States</option>
@@ -128,7 +135,6 @@ export default class AddProductModal extends React.Component {
                     className="product-modal-form__name"
                     name="quantity"
                     placeholder="Quantity"
-                    required
                   />
                 </div>
 
