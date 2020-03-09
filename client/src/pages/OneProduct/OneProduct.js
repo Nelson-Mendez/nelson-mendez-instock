@@ -24,14 +24,16 @@ class OneProduct extends Component {
         this.setState({
           itemData: response.data[0]
         }, () => {
-          let url = `http://localhost:8080/warehouses/${this.state.itemData.warehouseId}`
-          axios
-            .get(url)
-            .then(response => {
-              this.setState({
-                warehouseData: response.data
+          if (response.data[0].warehouseId){
+            let url = `http://localhost:8080/warehouses/${this.state.itemData.warehouseId}`
+            axios
+              .get(url)
+              .then(response => {
+                this.setState({
+                  warehouseData: response.data
+                })
               })
-            })
+            }
         })
       })
       .catch(error => {
@@ -46,7 +48,7 @@ class OneProduct extends Component {
 
 
   render() {
-    console.log(this.state.warehouseData.contact)
+    // console.log(this.state.warehouseData.contact)
     return (
       <div className="OneProduct">
         <div className="OneProduct__container">

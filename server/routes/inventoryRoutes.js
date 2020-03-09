@@ -42,11 +42,10 @@ router.get('/warehouses/:id', (req, res) => {
 
 router.post('/add', (req, res) => {
     const {body} = req
-    console.log(body)
-    
+    console.log(body)    
   
    for(const key in body){
-       if(!body[key] && key !== 'isInstock'){
+       if(!body[key] && key !== 'description'){
             return res.status(400).send('Invalid data')
        }
    }

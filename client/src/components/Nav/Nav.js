@@ -21,7 +21,7 @@ class Nav extends Component {
                                 </NavLink>
                             </li>
                             <li className="Nav__list-item">
-                                <NavLink to="warehouses" className="Nav__link" activeClassName="Nav__link Nav__link--active">
+                                <NavLink to="/warehouses" className="Nav__link" activeClassName="Nav__link Nav__link--active">
                                     Locations
                                 </NavLink>
                             </li>

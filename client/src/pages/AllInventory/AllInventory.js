@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import ProductList from '../../components/ProductList/ProductList.js';
-import AddInventoryModal from '../../components/AddInventoryModal/AddInventoryModal';
+import AddProductModal from '../../components/AddProductModal/AddProductModal';
 import plusSign from '../../assets/Icons/SVG/Icon-add.svg'
 
 import './allinventory.scss';
@@ -57,44 +57,41 @@ export default class AllInventory extends React.Component {
 
         if (this.state.loadedInventory) {
             return (
+
                 <main className="inventory">
+                    <div className="inventory__header">
+                        <h1 className="inventory__title">Inventory</h1>
+                        <SearchBar />
+                    </div>
 
-                    <h1 className="inventory__title">Inventory</h1>
+                    <div className="inventory__table-heading">
+                        <h3 className="inventory__table--large">ITEM</h3>
+                        <h3 className="inventory__table">LAST ORDERED</h3>
+                        <h3 className="inventory__table">LOCATIONS</h3>
+                        <h3 className="inventory__table">QUANTITY</h3>
+                        <h3 className="inventory__table">STATUS</h3>
+                    </div>  
 
-                    <SearchBar />
-
-                    {/* <TableHeader /> */}
-    
                     <ProductList 
                         content={this.state.inventoryList} 
                         updateInventory = {this.updateInventory}
                     />
 
                     <button className="addButton" onClick={this.openModal}>
-                        <img src={plusSign} />
+                        <img className="addButton__plus" src={plusSign} alt=""/>
                     </button>
                     
-                    <AddInventoryModal isOpen={this.state.modalIsOpen} contentLabel="onRequestClose" onRequestClose={this.closeModal} closeModal={this.closeModal} portalClassName="AddInventoryModal" getInventoryList={this.getInventoryList} />
-                                
+                    <AddProductModal 
+                        isOpen={this.state.modalIsOpen} 
+                        contentLabel="onRequestClose"  
+                        closeModal={this.closeModal} 
+                        portalClassName="AddProductModal" 
+                        getInventoryList={this.getInventoryList} 
+                    />
                </main>
-                
-                   
-                    
-                        
-                        
-                        
-                        
-
-                        
-        
-
-                       
-                        
-                    
-                
             )
         }
-        else {return "loading"}
+        else return "loading"
     }
 }
 

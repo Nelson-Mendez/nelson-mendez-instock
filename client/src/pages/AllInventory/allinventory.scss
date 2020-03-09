@@ -6,16 +6,91 @@
     @include link-reset;
 }
 
-.addButton {
-    background-color:#004992;
-	border-radius:50%;
-	display:inline-block;
-	cursor:pointer;
-    padding:60px 60px;
-	text-decoration:none;
+.inventory {
+	margin: $spacing-top $spacing-sm 0;
+
+	@include tablet {
+		margin: $dt-spacing-lg $spacing-med 0;
+	}
+	@include desktop {
+		margin: $dt-spacing-lg 5rem 7.5rem;
+	}
+
+	&__header {
+		@include tablet {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__title {
+		@include mb-text-1;
+		margin-bottom: $spacing-sm;
+		@include tablet {
+		  @include text-1;
+		  margin-bottom: $spacing-med;
+		}
+	  }
+
+	  &__table-heading {
+		display: none;
+
+		@include tablet {
+		  margin: 0;
+		  display: flex;
+		  justify-content: space-between;
+		}
+	  }
+
+	  &__table {
+
+		  @include tablet {
+			  display: unset;
+			  width: 46rem;
+			  @include label-text;
+			}
+
+			&--large {
+			  display: none;
+			  @include tablet {
+				display: unset;
+				width: 92rem;
+				@include label-text;
+			  }
+			}
+		}
+		
 }
 
-.addButton:active {
-	position:relative;
-	top:1px;
+.addButton {
+	background-color:#004992;
+	border:none;
+	border-radius:50%;
+	position: fixed;
+	bottom: 15%;
+	right: 7%;
+	display:inline-block;
+	cursor:pointer;
+	width:6rem;
+	height: 6rem;
+	text-decoration:none;
+
+	@include tablet {
+		width:8rem;
+		height: 8rem;
+		left: 12%;
+		bottom: 12%;
+	}
+
+	&__plus {
+		height: 20px;
+		width: 20px;
+		margin-top: 0.5rem;
+
+		@include tablet {
+			width:2.4rem;
+			height: 2.4rem;
+		}
+	}
 }
+

@@ -27,7 +27,7 @@ const SingleWarehouse = ({ id, name, address, contact, categories }) => {
           </div>
         </div>
       </div>
-      <img className="warehouseItem__icon" src={arrowright} />
+      <img className="warehouseItem__icon" alt ="" src={arrowright} />
     </>
   )
 }
