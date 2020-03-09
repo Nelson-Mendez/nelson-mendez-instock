@@ -2,6 +2,8 @@
 @import '../../PartialStyles/variables';
 @import '../../PartialStyles/mixins';
 
+
+
 .OneWarehouse {
     margin-left: 16px;
     margin-right: 16px; 
@@ -17,6 +19,7 @@
         font-size: 2.2rem; 
         font-family: 'AvenirNextBold'; 
         margin-top: 16px; 
+        color: $black; 
         @include tablet {
             font-size: 4.5rem; 
         }
