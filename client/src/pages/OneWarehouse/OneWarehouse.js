@@ -3,6 +3,7 @@ import axios from 'axios';
 import ProductList from '../../components/ProductList/ProductList';
 import backArrow from '../../assets/Icons/SVG/Icon-back-arrow.svg'; 
 import './onewarehouse.scss';
+import {Link} from 'react-router-dom'; 
 
 class OneWarehouse extends React.Component {
   state = {
@@ -27,7 +28,7 @@ class OneWarehouse extends React.Component {
     if (this.state.loadedData) {
       return (
         <section className="OneWarehouse">
-            <h1 className="OneWarehouse__name"><img src= {backArrow} alt="" className="OneWarehouse__backArrow" />{this.state.warehouseData.name}</h1>
+            <Link to='/warehouses'><h1 className="OneWarehouse__name"><img src= {backArrow} alt="" className="OneWarehouse__backArrow" />{this.state.warehouseData.name}</h1></Link>
             <div className="OneWarehouse__flex-container">
               <div>
                 <h4 className="OneWarehouse__subheading">Address</h4>
