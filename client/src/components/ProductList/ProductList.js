@@ -1,27 +1,24 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import SingleProduct from '../../components/SingleProduct/SingleProduct';
+import React from "react";
+import { Link } from "react-router-dom";
+import SingleProduct from "../../components/SingleProduct/SingleProduct";
 
+export default function ProductList(props) {
+  const { content } = props;
 
-export default function ProductList (props) {
-    
-    const { content } = props;
+  const transferUpdatedInventory = itemId => {
+    props.updateInventory(itemId);
+  };
 
-    const transferUpdatedInventory = (itemId) => {
-        console.log(itemId, 'in the productlist')
-        props.updateInventory(itemId)
-    }
-
-    return ( 
-        <> 
-            {content.map(item => {
-                return (<Link className="link" key={item.id} to={`/inventory/${item.id}`}>
-                    <SingleProduct 
-                        content={item}
-                        transferUpdatedInventory = {transferUpdatedInventory}
-                    />
-                </Link>);
-            })}
-        </>
-    )
+  return (
+    <>
+      {content.map(item => {
+        return (
+          <SingleProduct
+            content={item}
+            transferUpdatedInventory={transferUpdatedInventory}
+          />
+        );
+      })}
+    </>
+  );
 }

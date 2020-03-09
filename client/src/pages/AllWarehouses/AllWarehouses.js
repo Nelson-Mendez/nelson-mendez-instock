@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import AddWarehouseModal from '../../components/AddWarehouseModal/AddWarehouseModal'
+import AddWarehouseModal from "../../components/AddWarehouseModal/AddWarehouseModal";
 
 import "./allwarehouses.scss";
 import SingleWarehouse from "../../components/SingleWarehouse/SingleWarehouse";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Add from "../../assets/Icons/SVG/Icon-add.svg";
 
-const URL = "http://localhost:8080/"
+const URL = "http://localhost:8080/";
 
 class AllWarehouses extends React.Component {
   constructor() {
@@ -17,22 +17,21 @@ class AllWarehouses extends React.Component {
     this.state = {
       warehouseList: [],
       modalIsOpen: false
-    }
+    };
   }
 
   openModal = () => {
-    this.setState({ modalIsOpen: true })
-  }
+    this.setState({ modalIsOpen: true });
+  };
 
   closeModal = () => {
-    this.setState({ modalIsOpen: false })
-  }
+    this.setState({ modalIsOpen: false });
+  };
 
   getWarehouseList = () => {
     axios
       .get(`${URL}warehouses`)
       .then(res => {
-        console.log(res.data);
         this.setState({
           warehouseList: res.data
         });
@@ -40,7 +39,7 @@ class AllWarehouses extends React.Component {
       .catch(error => {
         console.log(error);
       });
-  }
+  };
 
   componentDidMount() {
     this.getWarehouseList();
@@ -49,7 +48,6 @@ class AllWarehouses extends React.Component {
   render() {
     return (
       <>
-
         <div className="warehouses">
           <div className="warehouses__title-wrap">
             <h1 className="warehouses__title">Locations</h1>
@@ -65,7 +63,11 @@ class AllWarehouses extends React.Component {
             {this.state.warehouseList.map(obj => {
               return (
                 <div className="warehouses__item" key={obj.id}>
-                  <Link className="warehouses__link" key={obj.id} to={`/warehouses/${obj.id}`}>
+                  <Link
+                    className="warehouses__link"
+                    key={obj.id}
+                    to={`/warehouses/${obj.id}`}
+                  >
                     <SingleWarehouse
                       id={obj.id}
                       name={obj.name}
@@ -75,17 +77,28 @@ class AllWarehouses extends React.Component {
                     />
                   </Link>
                 </div>
-              )
+              );
             })}
           </div>
-          <button className="warehouses__button" onClick={this.openModal}><img className="warehouses__buttonimg" src={Add} alt="modal button" />
+          <button className="warehouses__button" onClick={this.openModal}>
+            <img
+              className="warehouses__buttonimg"
+              src={Add}
+              alt="modal button"
+            />
           </button>
-          <AddWarehouseModal isOpen={this.state.modalIsOpen} contentLabel="onRequestClose" onRequestClose={this.closeModal} closeModal={this.closeModal} portalClassName="AddWarehouseModal" getWarehouseList={this.getWarehouseList} />
+          <AddWarehouseModal
+            isOpen={this.state.modalIsOpen}
+            contentLabel="onRequestClose"
+            onRequestClose={this.closeModal}
+            closeModal={this.closeModal}
+            portalClassName="AddWarehouseModal"
+            getWarehouseList={this.getWarehouseList}
+          />
         </div>
       </>
-    )
+    );
   }
 }
 
 export default AllWarehouses;
-

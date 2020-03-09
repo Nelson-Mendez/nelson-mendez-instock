@@ -4,13 +4,13 @@
 
 .SingleProduct {
 
-    background-color: $off-white; 
     font-family: "AvenirNextRegular";
     color: $black;
     display:flex;
+    position: relative;
 
     &__container {
-        width: 90%;
+        // width: 90%;
         border-bottom: 0.15rem solid $grey;
         padding-bottom: 3rem;
         position: relative;
@@ -29,7 +29,12 @@
         @include tablet {
             width: 46rem;
             display: flex;
-            justify-content: space-between;;
+            justify-content: space-between;
+
+            &--button {
+              width: 3rem;
+
+            }
         
             &--product {
                 display: block;
@@ -55,7 +60,8 @@
         font-size: 14px;
 
         @include tablet {
-            width: 17.22%rem;
+            // width: 100;
+            padding-right: 1.6rem;
         }
 
         &--name {
@@ -67,13 +73,13 @@
         
     }
 
-    &__delete-btn {
+    &__removeButton {
         position: absolute;
         border: none;
         background-color: transparent;
         cursor: pointer;
-        top: 0%;
-        left: 100%;
+        top: 10%;
+        right: 10%;
         
         @include tablet {
             display: block;
@@ -84,4 +90,8 @@
             outline: none
         }
     }
+}
+
+.link {
+  width: 100vw;
 }
