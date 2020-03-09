@@ -27,6 +27,7 @@ class OneWarehouse extends React.Component {
 
     if (this.state.loadedData) {
       return (
+
         <section className="OneWarehouse">
             <Link to='/warehouses'><h1 className="OneWarehouse__name"><img src= {backArrow} alt="" className="OneWarehouse__backArrow" />{this.state.warehouseData.name}</h1></Link>
             <div className="OneWarehouse__flex-container">

@@ -2,18 +2,30 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 import './singleproduct.scss';
 import RemoveItem from '../RemoveItem/RemoveItem'; 
+import axios from 'axios';
 
 export default class SingleProduct extends React.Component {
     constructor(props) {
         super(props)
 
         this.state={
-          showMenu: false, 
+          showMenu: false,
+          itemId: this.props.content.id
         }
         // this.handleShowMenu = this.handleShowMenu.bind(this);
     }
     handleShowMenu (event){
-        console.log("CHECK",this.state);
+        // DELETE AXIOS CALL // 
+        axios
+            .delete(`http://localhost:8080/inventory/${this.props.content.id}`)
+            .then(response => {
+                this.props.transferUpdatedInventory(response.data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+        
         event.preventDefault(); 
         // event.stopPropagation();
         if(this.state.showMenu === true) {
@@ -23,9 +35,10 @@ export default class SingleProduct extends React.Component {
             this.setState({ showMenu: true });
         }
     }    
-    
+
 
     render(){
+
     let status = "";
     (this.props.content.isInstock === true ? status = "In Stock" : status = "Out of Stock");
     return (
@@ -81,7 +94,11 @@ export default class SingleProduct extends React.Component {
                 </div>
                 {/* </Link> */}
                 <div className="SingleProduct__section-container SingleProduct__section-container--button">
-                    <RemoveItem handleShowMenu={this.handleShowMenu.bind(this)} showMenu={this.state.showMenu}/>
+                    <RemoveItem 
+                        handleShowMenu={this.handleShowMenu.bind(this)} 
+                        showMenu={this.state.showMenu}
+                        itemId = {this.props.content.id}
+                    />
                 </div>
 
             </div>
