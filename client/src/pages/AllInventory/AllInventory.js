@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import ProductList from '../../components/ProductList/ProductList.js';
-import AddInventoryModal from '../../components/AddInventoryModal/AddInventoryModal';
+import AddProductModal from '../../components/AddProductModal/AddProductModal';
 import plusSign from '../../assets/Icons/SVG/Icon-add.svg'
 
 import './allinventory.scss';
@@ -81,11 +81,11 @@ export default class AllInventory extends React.Component {
                         <img className="addButton__plus" src={plusSign} alt=""/>
                     </button>
                     
-                    <AddInventoryModal 
+                    <AddProductModal 
                         isOpen={this.state.modalIsOpen} 
                         contentLabel="onRequestClose"  
                         closeModal={this.closeModal} 
-                        portalClassName="AddInventoryModal" 
+                        portalClassName="AddProductModal" 
                         getInventoryList={this.getInventoryList} 
                     />
                </main>
