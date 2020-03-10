@@ -42,36 +42,26 @@ export default class SingleProduct extends React.Component {
           <div className="SingleProduct__container">
             <div className="SingleProduct__section-container SingleProduct__section-container--product">
               <h3 className="SingleProduct__title">item</h3>
-              <p className="SingleProduct__information SingleProduct__information--name">
-                {this.props.content.name}
-              </p>
-              <p className="SingleProduct__information SingleProduct__information--description">
-                {this.props.content.description}
-              </p>
+              <p className="SingleProduct__information SingleProduct__information--name">{this.props.content.name}</p>
+              <p className="SingleProduct__information SingleProduct__information--description">{this.props.content.description}</p>
             </div>
 
-            <div className="SingleProduct__section-container">
+            <div className="SingleProduct__section-container SingleProduct__section-container--ordered">
               <h3 className="SingleProduct__title">Last Ordered</h3>
-              <p className="SingleProduct__information">
-                {this.props.content.lastOrdered}
-              </p>
+              <p className="SingleProduct__information">{this.props.content.lastOrdered}</p>
             </div>
 
-            <div className="SingleProduct__section-container">
+            <div className="SingleProduct__section-container SingleProduct__section-container--location">
               <h3 className="SingleProduct__title">Locations</h3>
-              <p className="SingleProduct__information">
-                {this.props.content.city}, {this.props.content.country}
-              </p>
+              <p className="SingleProduct__information">{this.props.content.city}, {this.props.content.country}</p>
             </div>
 
-            <div className="SingleProduct__section-container">
+            <div className="SingleProduct__section-container SingleProduct__section-container--quantity">
               <h3 className="SingleProduct__title">QUANTITY</h3>
-              <p className="SingleProduct__information">
-                {this.props.content.quantity}
-              </p>
+              <p className="SingleProduct__information">{this.props.content.quantity}</p>
             </div>
 
-            <div className="SingleProduct__section-container">
+            <div className="SingleProduct__section-container SingleProduct__section-container--status">
               <h3 className="SingleProduct__title">STATUS</h3>
               <p className="SingleProduct__information">{status}</p>
             </div>
@@ -79,7 +69,7 @@ export default class SingleProduct extends React.Component {
         </Link>
 
         <div className="SingleProduct__removeButton">
-          <div className="SingleProduct__section-container SingleProduct__section-container--button">
+          <div className="SingleProduct__section-container--button">
             <RemoveItem
               handleShowMenu={this.handleShowMenu.bind(this)}
               showMenu={this.state.showMenu}

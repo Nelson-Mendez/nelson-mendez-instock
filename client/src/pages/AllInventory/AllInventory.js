@@ -55,12 +55,12 @@ export default class AllInventory extends React.Component {
             <SearchBar />
           </div>
 
-          <div className="inventory__table-heading">
-            <h3 className="inventory__table--large">ITEM</h3>
-            <h3 className="inventory__table">LAST ORDERED</h3>
-            <h3 className="inventory__table">LOCATIONS</h3>
-            <h3 className="inventory__table">QUANTITY</h3>
-            <h3 className="inventory__table">STATUS</h3>
+          <div className="inventory__table-header">
+            <h3 className="inventory__table-heading--item">ITEM</h3>
+            <h3 className="inventory__table-heading--ordered">LAST ORDERED</h3>
+            <h3 className="inventory__table-heading--location">LOCATIONS</h3>
+            <h3 className="inventory__table-heading--quantity">QUANTITY</h3>
+            <h3 className="inventory__table-heading--status">STATUS</h3>
           </div>
 
           <ProductList
