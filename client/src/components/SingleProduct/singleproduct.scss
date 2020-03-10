@@ -1,0 +1,118 @@
+@import "../../PartialStyles/fonts";
+@import "../../PartialStyles/variables";
+@import "../../PartialStyles/mixins";
+
+.SingleProduct {
+
+    font-family: "AvenirNextRegular";
+    color: $black;
+    display:flex;
+    position: relative;
+    
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__container {
+        margin-bottom: 2.4rem;
+        border-bottom: 0.1rem solid $grey;
+        width: 100%;
+        
+        @include tablet {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    
+    &__section-container {
+
+        margin-bottom: 2.4rem;      
+       
+
+        &--button {
+            width: 3rem;
+        }
+        
+        &--product {
+            width: 22.4rem;
+        }
+
+        &--ordered {
+            @include tablet {
+                width: 10rem;
+            }
+        }
+
+        &--location {
+            @include tablet {
+                width: 10rem;
+            }
+        }
+
+        &--quantity {
+            @include tablet {
+                width: 7.6rem;
+            }
+        }
+
+        &--status {
+            @include tablet {
+                width: 10rem;
+            }
+        }
+    }
+    
+    &__title {
+        text-transform: uppercase;
+        color: $grey;
+        font-size: 14px;
+        font-family: "AvenirNextDemiBold";
+        margin-bottom: 1.6rem; 
+        
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__information {
+        font-size: 14px;
+
+        @include tablet {
+            // padding: 2.2rem 0 0;
+        }
+
+        &--name {
+            font-family: 'AvenirNextBold';
+            font-size: 18px;
+            margin: 0 0 1.6rem;
+
+            @include tablet {
+                margin-bottom: 0.8rem;
+            }
+        }
+    }
+
+    &__removeButton {
+        width: 1rem;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 1rem;
+        
+        @include tablet {
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.link {
+  width: 100vw;
+  height: 100%;
+}

@@ -1,0 +1,90 @@
+@import "../../PartialStyles/fonts";
+@import "../../PartialStyles/mixins";
+@import "../../PartialStyles/variables";
+
+.warehouses {
+  margin: 0 $spacing-sm;
+  margin-top: $spacing-top;
+  @include tablet {
+    margin: 0 $spacing-med;
+    margin-top: $dt-spacing-lg;
+  }
+  @include desktop {
+    margin: 0 60px;
+    margin-top: $dt-spacing-lg;
+    margin-bottom: 80px;
+  }
+  &__link {
+    @include link-reset;
+  }
+  &__title-wrap {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__title {
+    @include mb-text-1;
+    margin-bottom: $spacing-sm;
+    @include tablet {
+      @include text-1;
+      margin-bottom: $spacing-med;
+    }
+  }
+  &__subheading-wrap {
+    @include desktop {
+      display: flex;
+      justify-content: flex-start;
+      width: 1152px;
+    }
+  }
+  &__subheading {
+    display: none;
+    @include desktop {
+      display: unset;
+      @include label-text;
+      width: 245px;
+    }
+    &:first-of-type{
+      @include desktop {
+        width: 300px;
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    border-bottom: 1px solid $light-grey;
+    @include desktop {
+      margin-top: $spacing-med;
+    }
+    &:first-of-type {
+      @include desktop {
+      margin-top: $spacing-top;
+      }
+    }
+  }
+  &__button {
+    position: fixed;
+    bottom: 20px;
+    right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-blue;
+    outline: none;
+    border: none;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    cursor: pointer;
+    @include tablet {
+      bottom: 8%;
+    }
+  }
+  &__buttonimg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+

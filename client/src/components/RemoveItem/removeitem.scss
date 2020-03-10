@@ -1,0 +1,35 @@
+@import '../../PartialStyles/fonts';
+@import '../../PartialStyles/variables';
+@import '../../PartialStyles/mixins';
+
+.container {
+    position: relative;
+    width:1rem;
+}
+
+svg {
+  height: 2rem;
+}
+
+
+.button {
+  border: none;
+  width: 1rem;
+  outline: none;
+  background-color: transparent;
+}
+
+.dropdown {
+        position: absolute;
+        border: none;    
+        right: 0;   
+        
+
+        &__text {
+            padding: 6px 10px; 
+            width: 161px;
+            height: 44px; 
+            background-color: white;
+            border: 0.1rem solid $grey;
+        }
+}

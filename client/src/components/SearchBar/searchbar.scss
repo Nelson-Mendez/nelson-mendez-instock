@@ -1,0 +1,39 @@
+@import "../../PartialStyles/fonts";
+@import "../../PartialStyles/mixins";
+@import "../../PartialStyles/variables";
+
+.search {
+  display: flex;
+  @include mb-text-2;
+  margin-bottom: 3.2rem;
+  width: 250px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid $light-grey;
+  background: $off-white;
+  @include tablet {
+    max-width: 252px;
+    margin-bottom: 0;
+    }
+  @include desktop {
+    min-width: 275px;
+    margin-right: 18px;
+  }
+  &__icon {
+    margin-left: $spacing-sm;
+  }
+  &__input {
+    @include mb-text-2;
+    width: inherit;
+    height: inherit;
+    padding-left: 10px;
+    border: none;
+    background: none;
+    &::placeholder{
+      color: $black;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+}
