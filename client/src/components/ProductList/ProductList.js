@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import SingleProduct from "../../components/SingleProduct/SingleProduct";
 
 export default function ProductList(props) {
@@ -14,6 +13,7 @@ export default function ProductList(props) {
       {content.map(item => {
         return (
           <SingleProduct
+            key={item.id}
             content={item}
             transferUpdatedInventory={transferUpdatedInventory}
           />
